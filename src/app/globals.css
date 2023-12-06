@@ -69,3 +69,6 @@ body {
   @apply text-blue-900 hover:text-sky-500;
 }
 
+.years {
+  @apply mt-10;
+}
