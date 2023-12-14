@@ -36,7 +36,7 @@ export function Together() {
               potential partner, there are many ways to get involved and
               contribute to our mission.
             </p>
-            <p className="text-5xl font-extrabold">#GetInvolved</p>
+            <p className="text-3xl md:text-5xl font-extrabold">#GetInvolved</p>
           </div>
         </div>
       </div>

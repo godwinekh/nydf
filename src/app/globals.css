@@ -11,17 +11,17 @@ body {
     @apply font-bold text-4xl mb-1 capitalize;
   }
   h2 {
-    @apply font-bold text-3xl mb-10 capitalize w-full text-sky-500;
+    @apply font-bold text-3xl mb-10 capitalize w-full text-azure;
   }
   /* h3 {
-    @apply font-bold text-2xl mb-1 capitalize text-blue-900;
+    @apply font-bold text-2xl mb-1 capitalize text-navy;
   } */
   h5 {
-    @apply font-bold text-2xl capitalize my-3 text-blue-900;
+    @apply font-bold text-2xl capitalize my-3 text-navy;
   }
 
   h6 {
-    @apply text-blue-900;
+    @apply text-navy;
   }
 }
 
@@ -50,11 +50,11 @@ body {
 }
 
 .nav-link {
-  @apply px-5 py-3 capitalize hover:bg-sky-600 focus:border-b-4 focus:border-amber-400 focus:bg-sky-600 hover:text-white focus:text-white;
+  @apply md:px-5 py-3 capitalize hover:bg-sky-600 focus:border-b-4 focus:border-orange-yellow focus:bg-sky-600 hover:text-white focus:text-white;
 }
 
 .prog-card {
-  @apply px-7 pt-16 pb-10 bg-gradient-to-b from-sky-600 to-sky-400 rounded-xl text-white md:w-5/12 relative z-50;
+  @apply px-7 pt-16 pb-10 bg-gradient-to-b from-sky-600 to-azure rounded-xl text-white md:w-5/12 relative z-40;
 }
 
 .prog-icon {
@@ -66,7 +66,7 @@ body {
 }
 
 .page-link {
-  @apply text-blue-900 hover:text-sky-500;
+  @apply text-navy hover:text-azure;
 }
 
 .years {
