@@ -1,5 +1,5 @@
 import BottomBar from "@/app/footer/BottomBar";
-import { TopBar } from "@/app/header/TopBar";
+import TopBar from "@/app/header/TopBar";
 import { Connect } from "@/app/home/Connect";
 import { Intro } from "@/app/home/Intro";
 import { Mandate } from "@/app/home/Mandate";

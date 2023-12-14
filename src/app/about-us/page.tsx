@@ -1,4 +1,4 @@
-import { TopBar } from "@/app/header/TopBar";
+import TopBar from "@/app/header/TopBar";
 import { Fragment } from "react";
 import Structure from "../structure";
 import BottomBar from "../footer/BottomBar";

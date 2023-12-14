@@ -7,7 +7,6 @@ import Academic from "@/images/icons/academic";
 import Tools from "@/images/icons/tools";
 import Ellipsis from "./Ellipsis";
 
-
 export function Mandate() {
   return (
     <div id="what-we-do" className="py-24 w-full bg-pink-50 layout relative">
@@ -18,6 +17,16 @@ export function Mandate() {
 
       <div className="flex md:gap-5 lg:gap-8">
         <div className="img-group">
+          <div className="flex flex-col gap-4 justify-center items-center w-full h-full px-8 bg-navy">
+            <p className="text-white">
+              <q>
+                Success is no accident. It is hard work, perseverance, learning,
+                studying, sacrifice, and most of all, love of what you are doing
+                or learning to do.
+              </q>
+            </p>
+            <p>- Pel&eacute;</p>
+          </div>
           <Image
             alt="A girl making a furniture"
             src={handyWoman}
@@ -25,6 +34,7 @@ export function Mandate() {
             placeholder="blur"
             sizes="100vw"
             fill
+            className="hover:cursor-pointer hover:opacity-0"
             style={{
               objectFit: "cover",
             }}
@@ -32,6 +42,16 @@ export function Mandate() {
         </div>
 
         <div className="hidden md:block order-first img-group">
+          <div className="flex flex-col gap-4 justify-center items-center w-full h-full px-8 bg-navy">
+            <p className="text-white">
+              <q>
+                Education is the passport to the future, for tomorrow belongs to
+                those who prepare for it today.
+              </q>
+            </p>
+            <p>- Malcolm X</p>
+          </div>
+
           <Image
             alt="A boy and a girl in the library"
             src={groupStudy}
@@ -39,6 +59,7 @@ export function Mandate() {
             placeholder="blur"
             sizes="100vw"
             fill
+            className="hover:cursor-pointer hover:opacity-0"
             style={{
               objectFit: "cover",
             }}
@@ -46,6 +67,17 @@ export function Mandate() {
         </div>
 
         <div className="hidden lg:block img-group">
+          <div className="flex flex-col gap-4 justify-center items-center w-full h-full px-8 bg-navy">
+            <p className="text-white">
+              <q>
+                Sports and games are the very things to organize boys and girls,
+                to teach them fair play and citizenship, and to develop healthy
+                bodies and alert minds.
+              </q>
+            </p>
+            <p>- Robert Baden-Powell</p>
+          </div>
+
           <Image
             alt="Two girls playing basketball"
             src={girlsPlayingBasketBall}
@@ -53,6 +85,7 @@ export function Mandate() {
             placeholder="blur"
             sizes="100vw"
             fill
+            className="hover:cursor-pointer hover:opacity-0"
             style={{
               objectFit: "cover",
             }}

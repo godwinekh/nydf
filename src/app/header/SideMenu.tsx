@@ -37,7 +37,7 @@ export default function SideMenu({ links }: SlideMenuProps) {
 
       {/* Sliding Menu */}
       <div
-        className={`md:hidden space-x-5 ${menuState.open ? "block" : "hidden"}`}
+        className={`md:hidden space-x-5 backdrop-2 ${menuState.open ? "block" : "hidden"}`}
       >
         <div
           className={`fixed top-0 left-0 bg-gray-100 h-full w-5/6 z-50 transition-transform ease-in-out duration-1000 transform ${
