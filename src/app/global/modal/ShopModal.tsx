@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Hoodie from "@/images/hoodie.png";
+import ShirtMocKup from "@/images/t-shirt-modal.jpg";
 import ChevronRight from "@/images/icons/chevronRight";
 import ShoppingBag from "@/images/icons/shoppingBag";
 import Close from "@/images/icons/close";
@@ -13,7 +13,7 @@ export default function ShopModal({ closeModal }: ShopModalProps) {
     <div
       className="fixed top-0 left-0 flex flex-col items-center justify-center px-2 py-10 w-full h-full bg-black bg-opacity-75"
     >
-      <div className="w-full md:w-1/2 lg:w-2/5 rounded-md overflow-hidden bg-white shadow-2xl relative">
+      <div className="w-full md:w-2/3 lg:w-3/5 rounded-md overflow-hidden bg-white shadow-2xl">
         <div className="px-6 py-5 my-0 flex items-center w-full text-center">
           <ShoppingBag className="w-12 h-12 text-navy" />
           <div className="grow text-center">
@@ -21,12 +21,12 @@ export default function ShopModal({ closeModal }: ShopModalProps) {
             <p className="text-sm">Every purchase is a donation!</p>
           </div>
           <button onClick={closeModal}>
-            <Close />
+            <Close className="w-8 h-8" />
           </button>
         </div>
         <Image
-          alt="hoodie"
-          src={Hoodie}
+          alt="NYDF T-Shirt MocKup"
+          src={ShirtMocKup}
           quality={100}
           className="w-full h-80"
           style={{

@@ -1,22 +1,18 @@
-"use client";
 import Link from "next/link";
 import SideMenu from "./SideMenu";
 
+// Define your navigation links
+const links = [
+  { text: "home", ref: "/" },
+  { text: "what we do", ref: "/#what-we-do" },
+  { text: "get involved", ref: "/#get-involved" },
+  { text: "contact us", ref: "/#contact" },
+  { text: "about us", ref: "/about" },
+  { text: "shop", ref: "/shop" },
+];
 
 export default function Navigate() {
-  // Define your navigation links
-  const links = {
-    page: ["what we do", "get involved", "contact us"],
-    global: [
-      "home",
-      "what we do",
-      "get involved",
-      "contact us",
-      "about us",
-      "shop",
-    ],
-  };
-
+  
   return (
     <div className="lg:grow order-first lg:order-none w-auto py-2 lg:py-0">
       {/* Navigation Links for small screens */}
@@ -24,13 +20,13 @@ export default function Navigate() {
 
       {/* Navigation links for medium and large screens */}
       <ul className="hidden lg:flex items-center justify-center gap-1 md:text-navy lg:text-white lg:bg-azure font-semibold text-sm lg:py-3 lg:h-full lg:px-7">
-        {links.global.map((link, index) => (
+        {links.map((link, index) => (
           <li className="flex-item shrink-0 py-2" key={index}>
             <Link
-              href={`${index === 4 || index === 5 ? "/" : "/#"}${link.replace(/ /g, "-")}`}
+              href={link.ref}
               className="nav-link text-center"
             >
-              {link}
+              {link.text}
             </Link>
           </li>
         ))}

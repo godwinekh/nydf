@@ -4,11 +4,13 @@ import { useState } from "react";
 import HappyChildren from "@/images/happy-children.png";
 import Hamburger from "@/images/icons/hamburger";
 
+interface NavigationLink {
+  text: string;
+  ref: string;
+}
+
 interface SlideMenuProps {
-  links: {
-    page: string[];
-    global: string[];
-  };
+  links: NavigationLink[];
 }
 
 interface MenuState {
@@ -74,44 +76,19 @@ export default function SideMenu({ links }: SlideMenuProps) {
 
           {/* Menu Items */}
           <div className="flex flex-col mt-12 px-5">
-            <div className="py-8">
-              <h6 className="border-b-2 border-gray-300 py-1 mb-3">
-                Sections on this page
-              </h6>
-              <ul>
-                {links.page.map((link, index) => (
-                  <li className="py-2" key={index}>
-                    <Link
-                      href={`${index === 4 ? "/" : "/#"}${link.replace(
-                        / /g,
-                        "-"
-                      )}`}
-                      className="nav-link"
-                      onClick={() => setMenuState({ open: false })}
-                    >
-                      {link}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
             <div>
               <h6 className="border-b-2 border-gray-300 py-1 mb-3">
-                Global links
+                Go to
               </h6>
               <ul>
-                {links.global.map((link, index) => (
+                {links.map((link, index) => (
                   <li className="py-2" key={index}>
                     <Link
-                      href={`${index === 4 ? "/" : "/#"}${link.replace(
-                        / /g,
-                        "-"
-                      )}`}
+                      href={link.ref}
                       className="nav-link"
                       onClick={() => setMenuState({ open: false })}
                     >
-                      {link}
+                      {link.text}
                     </Link>
                   </li>
                 ))}

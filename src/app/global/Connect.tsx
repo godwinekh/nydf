@@ -21,7 +21,7 @@ export default function Connect() {
   };
 
   return (
-    <div id="contact-us" className="py-24 w-full layout relative bg-pink-50">
+    <div id="contact" className="py-24 w-full layout relative bg-pink-50">
       <h2 className="flex items-center gap-3">
         <span>Connect with us</span>
         <Ellipsis />
@@ -35,13 +35,13 @@ export default function Connect() {
       )}
       {/* Text for /shop */}
       {pathname === "/shop" && (
-        <>
-          <p>
+        <div>
+          <p className="mb-10 leading-7">
             Have questions about our merchandize or want to know more about our
             programs? Contact us, and we will be happy to assist you
           </p>
-          <p> Thank you for being part of positive change through the Nixerlex Youth Development Foundation!</p>
-        </>
+          <p className="mb-5 leading-7"> Thank you for being part of positive change through the Nixerlex Youth Development Foundation!</p>
+        </div>
       )}
 
       <div id="socials" className="flex justify-start items-center gap-5 py-8">
