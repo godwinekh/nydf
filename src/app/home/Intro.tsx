@@ -5,7 +5,7 @@ import { SemiCircleBottomRight } from "./SemiCircle";
 
 export function Intro() {
   return (
-    <div className="layout relative pb-24 md:pt-12">
+    <div className="layout relative pb-24 pt-12">
       <div className="bg-wrap-intro">
         <Image
           alt="A Group of African Youths"

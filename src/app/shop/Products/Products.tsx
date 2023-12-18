@@ -1,5 +1,6 @@
-import Ellipsis from "../home/Ellipsis";
-import Search from "./Search";
+import Ellipsis from "../../global/Ellipsis";
+import Product from "./Product";
+import Search from "../Search";
 
 export default function Products() {
   return (
@@ -10,6 +11,10 @@ export default function Products() {
       </h2>
 
       <Search />
+
+      <div className="py-8">
+        <Product />
+      </div>
     </div>
   );
 }

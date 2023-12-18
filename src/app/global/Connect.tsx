@@ -5,17 +5,20 @@ import YoutubeIcon from "@/images/icons/youtube";
 import Ellipsis from "./Ellipsis";
 import Link from "next/link";
 import { FormEvent, useRef } from "react";
+import { usePathname } from "next/navigation";
 
-export function Connect() {
+export default function Connect() {
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
 
+  const pathname = usePathname();
+
   const handleCommentForm = (e: FormEvent) => {
     e.preventDefault();
-    
+
     console.log("This fu");
-  }
+  };
 
   return (
     <div id="contact-us" className="py-24 w-full layout relative bg-pink-50">
@@ -23,10 +26,23 @@ export function Connect() {
         <span>Connect with us</span>
         <Ellipsis />
       </h2>
-      <p>
-        Stay connected with us on social media to receive updates, stories, and
-        news about our ongoing projects
-      </p>
+      {/* Text for /home */}
+      {pathname === "/" && (
+        <p>
+          Stay connected with us on social media to receive updates, stories,
+          and news about our ongoing projects
+        </p>
+      )}
+      {/* Text for /shop */}
+      {pathname === "/shop" && (
+        <>
+          <p>
+            Have questions about our merchandize or want to know more about our
+            programs? Contact us, and we will be happy to assist you
+          </p>
+          <p> Thank you for being part of positive change through the Nixerlex Youth Development Foundation!</p>
+        </>
+      )}
 
       <div id="socials" className="flex justify-start items-center gap-5 py-8">
         <Link
@@ -56,7 +72,10 @@ export function Connect() {
 
       <div id="feedback">
         <h5 className="sm:max-md:mb-8 my-5">We would like to hear from you</h5>
-        <form onSubmit={handleCommentForm} className="flex flex-col gap-5 w-10/12 md:w-1/2" >
+        <form
+          onSubmit={handleCommentForm}
+          className="flex flex-col gap-5 w-10/12 md:w-1/2"
+        >
           <input
             type="name"
             id="nameInput"
@@ -77,7 +96,10 @@ export function Connect() {
             className="input-box"
             ref={messageRef}
           />
-          <button type="submit" className="bg-blue-600 w-2/5 py-3 mt-3 text-white rounded-xl text-xl">
+          <button
+            type="submit"
+            className="bg-blue-600 w-2/5 py-3 mt-3 text-white rounded-xl text-xl"
+          >
             Send
           </button>
         </form>

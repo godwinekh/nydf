@@ -3,12 +3,19 @@ import { SVGProps } from "react";
 export default function ArrowRight(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
       viewBox="0 0 24 24"
-      fill="currentColor"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="w-6 h-6"
       {...props}
     >
-      <path fill="none" d="M0 0h24v24H0z" />
-      <path d="M16 12l-6 6V6z" />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+      />
     </svg>
   );
 }

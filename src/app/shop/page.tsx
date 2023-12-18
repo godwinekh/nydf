@@ -1,19 +1,19 @@
 import { Fragment } from "react";
-import TopBar from "../header/TopBar";
-import Structure from "../structure";
-import BottomBar from "../footer/BottomBar";
+import Structure from "../global/Structure";
 import Welcome from "./Welcome";
-import Products from "./Products";
+import Products from "./Products/Products";
+import Discount from "./Discount";
+import Impact from "./Impact";
 
 export default function Shop() {
   return (
     <Fragment>
-      <TopBar />
       <Structure>
         <Welcome />
         <Products />
+        <Discount />
+        <Impact />
       </Structure>
-      <BottomBar />
     </Fragment>
-  )
+  );
 }

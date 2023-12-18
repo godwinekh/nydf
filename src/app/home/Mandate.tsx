@@ -5,7 +5,7 @@ import girlsPlayingBasketBall from "@/images/leisure.jpg";
 import VolleyBall from "@/images/icons/volleyBall";
 import Academic from "@/images/icons/academic";
 import Tools from "@/images/icons/tools";
-import Ellipsis from "./Ellipsis";
+import Ellipsis from "../global/Ellipsis";
 
 export function Mandate() {
   return (

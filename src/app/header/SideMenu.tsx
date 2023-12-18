@@ -21,23 +21,19 @@ export default function SideMenu({ links }: SlideMenuProps) {
 
   return (
     <div>
-      <div className="flex md:hidden items-center justify-start py-3">
+      <div className="lg:hidden py-3">
         {/* Hamburger Menu for Small Screens */}
         <button
           onClick={() => setMenuState({ open: !menuState.open })}
-          className="md:hidden focus:outline-none"
+          className="focus:outline-none text-white"
         >
-          <Hamburger />
+          <Hamburger className="w-10 h-10" />
         </button>
-
-        <h4 className="capitalize text-lg flex-grow text-center">
-          nixerlex youth development foundation
-        </h4>
       </div>
 
       {/* Sliding Menu */}
       <div
-        className={`md:hidden space-x-5 backdrop-2 ${menuState.open ? "block" : "hidden"}`}
+        className={`lg:hidden space-x-5 backdrop-2 ${menuState.open ? "block" : "hidden"}`}
       >
         <div
           className={`fixed top-0 left-0 bg-gray-100 h-full w-5/6 z-50 transition-transform ease-in-out duration-1000 transform ${

@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-export default function Plus(props: SVGProps<SVGSVGElement>) {
+export default function ChevronRight(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -8,12 +8,13 @@ export default function Plus(props: SVGProps<SVGSVGElement>) {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-4 h-4"
+      className="w-6 h-6"
+      {...props}
     >
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M12 4.5v15m7.5-7.5h-15"
+        d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5"
       />
     </svg>
   );

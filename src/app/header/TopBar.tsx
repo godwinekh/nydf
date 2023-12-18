@@ -11,11 +11,11 @@ export default function TopBar() {
 
   return (
     <div
-      className={`flex flex-col lg:flex-row items-center md:gap-7 ${
+      className={`sticky top-0 flex flex-row sm:max-lg:justify-evenly items-center gap-7 ${
         isShop ? "lg:gap-8" : "lg:gap-12"
-      } layout py-7 lg:py-0 bg-white shadow-md`}
+      } layout py-3 lg:py-0 bg-navy lg:bg-white shadow-md z-50`}
     >
-      <div className="shrink-0 flex items-center gap-2 p-1 mb-7 md:mb-0 ">
+      <div className="lg:shrink-0 max-lg:grow flex items-center justify-center gap-2 p-1">
         <Image
           alt="NYDF-LOGO"
           src={NydfLogo}
@@ -39,7 +39,7 @@ export default function TopBar() {
       </div>
 
       {/* Donate button */}
-      <button className="flex-none w-full lg:w-auto px-4 py-2 font-semibold text-sm lg:rounded-lg shadow-lg bg-orange-yellow text-white">
+      <button className="flex-none px-4 py-2 font-semibold rounded-lg shadow-lg bg-orange-yellow text-white">
         Donate
       </button>
     </div>

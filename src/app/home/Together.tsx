@@ -2,7 +2,7 @@ import Image from "next/image";
 import bandOfYouths from "@/images/together.jpg";
 import ExternalLink from "@/images/icons/externalLink";
 import { SemiCircleTopLeft, SemiCircleBottomRight } from "./SemiCircle";
-import Ellipsis from "./Ellipsis";
+import Ellipsis from "../global/Ellipsis";
 import Link from "next/link";
 
 export function Together() {
