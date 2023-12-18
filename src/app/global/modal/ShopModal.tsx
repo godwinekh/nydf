@@ -3,6 +3,7 @@ import ShirtMocKup from "@/images/t-shirt-modal.jpg";
 import ChevronRight from "@/images/icons/chevronRight";
 import ShoppingBag from "@/images/icons/shoppingBag";
 import Close from "@/images/icons/close";
+import Link from "next/link";
 
 interface ShopModalProps {
   closeModal: () => void;
@@ -45,10 +46,10 @@ export default function ShopModal({ closeModal }: ShopModalProps) {
           </p>
         </div>
 
-        <button className="w-full flex justify-between px-4 py-3 text-xl font-light bg-gradient-to-r from-navy to-azure text-white">
+        <Link href="/shop" className="w-full flex justify-between px-4 py-3 text-xl font-light bg-gradient-to-r from-navy to-azure text-white">
           <span className="grow text-center">Go to shop now</span>
           <ChevronRight />
-        </button>
+        </Link>
       </div>
     </div>
   );
