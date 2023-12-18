@@ -46,7 +46,7 @@ export default function ShopModal({ closeModal }: ShopModalProps) {
           </p>
         </div>
 
-        <Link href="/shop" className="w-full flex justify-between px-4 py-3 text-xl font-light bg-gradient-to-r from-navy to-azure text-white">
+        <Link href="/shop" onClick={closeModal} className="w-full flex justify-between px-4 py-3 text-xl font-light bg-gradient-to-r from-navy to-azure text-white">
           <span className="grow text-center">Go to shop now</span>
           <ChevronRight />
         </Link>
