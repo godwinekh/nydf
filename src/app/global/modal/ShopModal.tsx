@@ -11,7 +11,7 @@ interface ShopModalProps {
 export default function ShopModal({ closeModal }: ShopModalProps) {
   return (
     <div
-      className="fixed top-0 left-0 flex flex-col items-center justify-center px-2 py-10 w-full h-full bg-black bg-opacity-75"
+      className="fixed top-0 left-0 flex flex-col items-center justify-center px-2 py-10 w-full h-full bg-black bg-opacity-75 z-[60]"
     >
       <div className="w-full md:w-2/3 lg:w-3/5 rounded-md overflow-hidden bg-white shadow-2xl">
         <div className="px-6 py-5 my-0 flex items-center w-full text-center">
