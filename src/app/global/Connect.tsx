@@ -6,6 +6,10 @@ import Ellipsis from "./Ellipsis";
 import Link from "next/link";
 import { FormEvent, useRef } from "react";
 import { usePathname } from "next/navigation";
+import FacebookSvg from "@/images/facebook.svg";
+import LinkedinSvg from "@/images/linkedin.svg";
+import YoutubeSvg from "@/images/youtube.svg";
+import Image from "next/image";
 
 export default function Connect() {
   const nameRef = useRef<HTMLInputElement>(null);
@@ -33,14 +37,32 @@ export default function Connect() {
           and news about our ongoing projects
         </p>
       )}
+      {/* Text for /community */}
+      {pathname === "/community" && (
+        <div>
+          <p className="mb-5 leading-7">
+            Have questions about getting involved? Feel free to contact us, and we will be happy to provide more information.
+          </p>
+          <p className="mb-5 leading-7">
+            {" "}
+            Thank you for considering joining in creating positive change through the Nixerlex
+            Youth Development Foundation!
+          </p>
+        </div>
+      )}
+
       {/* Text for /shop */}
       {pathname === "/shop" && (
         <div>
-          <p className="mb-10 leading-7">
+          <p className="mb-5 leading-7">
             Have questions about our merchandize or want to know more about our
             programs? Contact us, and we will be happy to assist you
           </p>
-          <p className="mb-5 leading-7"> Thank you for being part of positive change through the Nixerlex Youth Development Foundation!</p>
+          <p className="mb-5 leading-7">
+            {" "}
+            Thank you for being part of positive change through the Nixerlex
+            Youth Development Foundation!
+          </p>
         </div>
       )}
 
@@ -50,7 +72,16 @@ export default function Connect() {
           target="_blank"
           className="w-16 h-16 text-blue-700"
         >
-          <FacebookIcon />
+          <Image
+            alt="facebook icon"
+            src={FacebookSvg}
+            quality={100}
+            width={64}
+            height={64}
+            style={{
+              objectFit: "contain",
+            }}
+          />
         </Link>
 
         <Link
@@ -58,7 +89,16 @@ export default function Connect() {
           target="_bla"
           className="w-16 h-16 text-blue-800"
         >
-          <LinkedInIcon />
+          <Image
+            alt="linkedin icon"
+            src={LinkedinSvg}
+            quality={100}
+            width={64}
+            height={64}
+            style={{
+              objectFit: "contain",
+            }}
+          />
         </Link>
 
         <Link
@@ -66,7 +106,16 @@ export default function Connect() {
           target="_bla"
           className="w-16 h-16 text-red-600"
         >
-          <YoutubeIcon />
+          <Image
+            alt="youtube icon"
+            src={YoutubeSvg}
+            quality={100}
+            width={64}
+            height={64}
+            style={{
+              objectFit: "contain",
+            }}
+          />
         </Link>
       </div>
 

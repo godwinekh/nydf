@@ -53,7 +53,8 @@ export function Intro() {
             alt="bullet pointer"
             src={RadialBullet}
             quality={100}
-            sizes="100vw"
+            width={60}
+            height={60}
             style={{
               objectFit: "contain",
             }}
@@ -72,7 +73,8 @@ export function Intro() {
             alt="bullet pointer"
             src={RadialBullet}
             quality={100}
-            sizes="100vw"
+            width={60}
+            height={60}
             style={{
               objectFit: "contain",
             }}

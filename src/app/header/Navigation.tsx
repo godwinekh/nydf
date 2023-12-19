@@ -5,14 +5,14 @@ import SideMenu from "./SideMenu";
 const links = [
   { text: "home", ref: "/" },
   { text: "what we do", ref: "/#what-we-do" },
-  { text: "get involved", ref: "/#get-involved" },
+  { text: "get involved", ref: "/community" },
   { text: "contact us", ref: "/#contact" },
   { text: "about us", ref: "/about" },
-  { text: "shop", ref: "/shop" },
+  { text: "store", ref: "/shop" },
 ];
 
 export default function Navigate() {
-  
+
   return (
     <div className="lg:grow order-first lg:order-none w-auto py-2 lg:py-0">
       {/* Navigation Links for small screens */}
