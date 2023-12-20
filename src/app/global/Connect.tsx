@@ -1,7 +1,4 @@
 "use client";
-import FacebookIcon from "@/images/icons/facebook";
-import LinkedInIcon from "@/images/icons/linkedIn";
-import YoutubeIcon from "@/images/icons/youtube";
 import Ellipsis from "./Ellipsis";
 import Link from "next/link";
 import { FormEvent, useRef } from "react";

@@ -4,10 +4,12 @@ import NydfLogo from "@/images/nf-logo.png";
 import Navigate from "./Navigation";
 import { usePathname } from "next/navigation";
 import ShoppingCart from "@/images/icons/cart";
+import { useAppSelector } from "@/redux/hooks";
 
 export default function TopBar() {
   const pathname = usePathname();
   const isShop = pathname === "/shop";
+  const cartItems = useAppSelector((state) => state.cart.totalItems);
 
   return (
     <div
@@ -34,8 +36,13 @@ export default function TopBar() {
 
       <Navigate />
 
-      <div className={`${isShop ? "block" : "hidden"}`}>
+      <div className={`${isShop ? "block" : "hidden"} relative`}>
         <ShoppingCart />
+        {cartItems > 0 && (
+          <p className="absolute -top-1.5 -right-1.5 w-5 h-5 flex justify-center items-center rounded-full bg-orange-yellow text-white text-sm">
+            {cartItems}
+          </p>
+        )}
       </div>
 
       {/* Donate button */}

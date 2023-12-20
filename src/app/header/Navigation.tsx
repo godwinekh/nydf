@@ -6,7 +6,7 @@ const links = [
   { text: "home", ref: "/" },
   { text: "what we do", ref: "/#what-we-do" },
   { text: "get involved", ref: "/community" },
-  { text: "contact us", ref: "/#contact" },
+  { text: "contact us", ref: "#contact" },
   { text: "about us", ref: "/about" },
   { text: "store", ref: "/shop" },
 ];

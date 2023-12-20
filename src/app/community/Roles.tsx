@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
 import Volunteer from "@/images/volunteer.jpg";
 import Members from "@/images/members.jpg";
-import Donate from "@/images/donate2.jpg";
+import Donate from "@/images/donate.jpg";
 import Role from "./Role";
 
 export interface Role {

@@ -1,18 +1,26 @@
 "use client";
-import Image from "next/image";
-import Hoodie from "@/images/hoodie.png";
+import Image, { StaticImageData } from "next/image";
 import Minus from "@/images/icons/minus";
 import Plus from "@/images/icons/plus";
 import Heart from "@/images/icons/heart";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useAppDispatch } from "@/redux/hooks";
+import { addToCart } from "@/redux/features/cart/cart";
 
-interface ProductInfoState {
+interface ProductProps {
+  name: string;
+  price: string;
+  image: StaticImageData;
+}
+
+interface ProductInfoState extends ProductProps {
   quantity: number;
   size: "s" | "m" | "l" | "xl" | "xxl" | undefined;
   color: { code: string; primary: string; secondary: string } | null;
 }
 
 const sizes: ProductInfoState["size"][] = ["s", "m", "l", "xl", "xxl"];
+
 const colors = [
   { code: "wh-az", primary: "white", secondary: "azure" },
   { code: "oy-az", primary: "orange-yellow", secondary: "azure" },
@@ -23,11 +31,16 @@ const colors = [
   { code: "oy-wh", primary: "orange-yellow", secondary: "white" },
 ];
 
-export default function Product() {
+export default function Product({ name, price, image }: ProductProps) {
+  const dispatch = useAppDispatch();
+  const [showWarning, setShowWarning] = useState<boolean>(false);
   const [productInfo, setProductInfo] = useState<ProductInfoState>({
     quantity: 1,
     size: undefined,
     color: null,
+    name,
+    price,
+    image,
   });
 
   const handleQuantity = (op: "minus" | "add") => {
@@ -64,15 +77,34 @@ export default function Product() {
     }));
   };
 
+  const handleAddToCart = () => {
+    if (productInfo.size && productInfo.color) {
+      dispatch(addToCart());
+    } else {
+      setShowWarning(true);
+    }
+  };
+
+  // To display warning text for only 5 seconds
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setShowWarning(false);
+    }, 5000);
+
+     return () => {
+       clearTimeout(timeoutId);
+     };
+  }, [showWarning]);
+
   return (
-    <div className="flex flex-col w-72 p-2 border rounded-md text-navy">
+    <div className="flex flex-col w-72 p-2 mb-10 border rounded-md text-navy">
       {/* Image */}
       <div>
         <Image
-          alt="hoodie"
-          src={Hoodie}
+          alt={name}
+          src={image}
           quality={100}
-          className="w-full h-full rounded-md"
+          className="w-full h-64 rounded-md"
           style={{
             objectFit: "cover",
           }}
@@ -83,14 +115,15 @@ export default function Product() {
       <div className="py-4 px-2">
         {/* Title */}
         <div className="flex justify-between items-center">
-          <h6 className="font-bold text-lg text-azure">NYDF Hoodies</h6>
+          <h6 className="font-bold text-lg text-azure">{name}</h6>
           <button>
             <Heart />
           </button>
         </div>
         {/* Price */}
         <p>
-          <span>&#x20A6;</span>15,000
+          <span>&#x20A6;</span>
+          {price}
         </p>
 
         {/* Size */}
@@ -154,13 +187,18 @@ export default function Product() {
         </div>
 
         {/* Actions */}
-        <div className="flex justify-start gap-3 py-3">
+        <div className="flex justify-start gap-3 py-3 relative">
           <button className="bg-gray-950 text-white px-4 py-2 rounded-lg text-sm">
             Buy now
           </button>
-          <button className="bg-orange-yellow text-white px-4 py-2 rounded-lg text-sm">
+          <button
+            onClick={handleAddToCart}
+            className="bg-orange-yellow text-white px-4 py-2 rounded-lg text-sm"
+          >
             Add to cart
           </button>
+
+          {showWarning && <p className="absolute -top-20 right-0 w-1/2 px-5 py-2 text-center text-xs rounded-lg bg-gray-100">Please select a size and color before adding item to cart</p>}
         </div>
       </div>
     </div>
