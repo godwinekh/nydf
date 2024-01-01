@@ -5,7 +5,7 @@ export default function Newsletter() {
         Sign up for our newsletters to get the discount
       </h6>
       <form>
-        <div className="flex items-center gap-2">
+        <div className="flex w-full items-center gap-2">
           <input
             type="email"
             placeholder="Email"
