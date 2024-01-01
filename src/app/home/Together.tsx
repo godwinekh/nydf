@@ -4,6 +4,7 @@ import ExternalLink from "@/images/icons/externalLink";
 import { SemiCircleTopLeft, SemiCircleBottomRight } from "./SemiCircle";
 import Ellipsis from "../global/Ellipsis";
 import Link from "next/link";
+import LearnMore from "../global/LearnMore";
 
 export function Together() {
   return (
@@ -85,6 +86,8 @@ export function Together() {
           community takes care of its own too.
         </p>
       </div>
+
+      <LearnMore href="/community" />
 
       <SemiCircleBottomRight />
       <SemiCircleTopLeft />

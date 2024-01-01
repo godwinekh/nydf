@@ -137,7 +137,7 @@ export default function Product({ name, price, image }: ProductProps) {
                 value={size}
                 onClick={handleSize.bind(null, size)}
                 className={`w-10 h-10 cursor-pointer rounded-full uppercase text-white text-sm ${
-                  productInfo.size === size ? "bg-orange-yellow" : "bg-navy"
+                  productInfo.size === size ? "bg-orange-yellow" : "bg-gray-400"
                 }`}
               />
             ))}

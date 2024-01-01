@@ -9,9 +9,11 @@ export default function Newsletter() {
           <input
             type="email"
             placeholder="Email"
-            className="grow p-3 rounded-xl"
+            className="grow p-3 rounded-xl bg-[#FEF9DE]"
           />
-          <button className="px-4 py-3 text-navy  rounded-xl shadow-md">Subscribe</button>
+          <button className="px-4 py-3 text-navy bg-white  rounded-xl shadow-md">
+            Subscribe
+          </button>
         </div>
       </form>
       <p className="text-sm mt-2 text-white">

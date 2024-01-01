@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FormEvent, useRef } from "react";
 import { usePathname } from "next/navigation";
 import FacebookSvg from "@/images/facebook.svg";
+import InstagramSvg from "@/images/instagram.svg";
 import LinkedinSvg from "@/images/linkedin.svg";
 import YoutubeSvg from "@/images/youtube.svg";
 import Image from "next/image";
@@ -34,16 +35,26 @@ export default function Connect() {
           and news about our ongoing projects
         </p>
       )}
+
+      {/* Text for /what-we-do */}
+      {pathname === "/mandate" && (
+        <p>
+          Stay connected with us on social media to get more information on
+          all our programs and their various pilot dates, application deadlines and requirements. You can also use the form below to request for specific information.
+        </p>
+      )}
+
       {/* Text for /community */}
-      {pathname === "/community" && (
+      {pathname === "/community" || pathname === "/about" && (
         <div>
           <p className="mb-5 leading-7">
-            Have questions about getting involved? Feel free to contact us, and we will be happy to provide more information.
+            Have questions about getting involved? Feel free to contact us, and
+            we will be happy to provide more information.
           </p>
           <p className="mb-5 leading-7">
             {" "}
-            Thank you for considering joining in creating positive change through the Nixerlex
-            Youth Development Foundation!
+            Thank you for considering joining in creating positive change
+            through the Nixerlex Youth Development Foundation!
           </p>
         </div>
       )}
@@ -72,6 +83,23 @@ export default function Connect() {
           <Image
             alt="facebook icon"
             src={FacebookSvg}
+            quality={100}
+            width={64}
+            height={64}
+            style={{
+              objectFit: "contain",
+            }}
+          />
+        </Link>
+
+        <Link
+          href="https://www.instagram.com/nixerlexfoundation"
+          target="_bla"
+          className="w-16 h-16 text-blue-800"
+        >
+          <Image
+            alt="instagram icon"
+            src={InstagramSvg}
             quality={100}
             width={64}
             height={64}

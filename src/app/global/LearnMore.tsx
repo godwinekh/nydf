@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function LearnMore({ href }: { href: Url }) {
   return (
-    <div className="w-full flex justify-end">
-      <Link href={href} className="flex gap-3">
+    <div className="w-full pt-20 px-8 flex justify-end">
+      <Link href={href} className="flex gap-3 text-azure">
         Learn more
         <ArrowRight />
       </Link>

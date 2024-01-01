@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import HappyChildren from "@/images/happy-children.png";
+import HappyChildren from "@/images/nf-logo.png";
 import Hamburger from "@/images/icons/hamburger";
+import Close from "@/images/icons/close";
+import { usePathname } from "next/navigation";
 
 interface NavigationLink {
   text: string;
@@ -20,6 +22,7 @@ interface MenuState {
 export default function SideMenu({ links }: SlideMenuProps) {
   // Initialize state using the MenuState interface
   const [menuState, setMenuState] = useState<MenuState>({ open: false });
+  const pathname = usePathname();
 
   return (
     <div>
@@ -27,7 +30,7 @@ export default function SideMenu({ links }: SlideMenuProps) {
         {/* Hamburger Menu for Small Screens */}
         <button
           onClick={() => setMenuState({ open: !menuState.open })}
-          className="focus:outline-none text-white"
+          className="focus:outline-none text-azure"
         >
           <Hamburger className="w-10 h-10" />
         </button>
@@ -35,57 +38,59 @@ export default function SideMenu({ links }: SlideMenuProps) {
 
       {/* Sliding Menu */}
       <div
-        className={`lg:hidden space-x-5 backdrop-2 ${menuState.open ? "block" : "hidden"}`}
+        className={`lg:hidden space-x-5 backdrop-2 ${
+          menuState.open ? "block" : "hidden"
+        }`}
       >
         <div
-          className={`fixed top-0 left-0 bg-gray-100 h-full w-5/6 z-50 transition-transform ease-in-out duration-1000 transform ${
+          className={`fixed top-0 left-0 bg-navy text-white h-full w-full overflow-auto flex flex-col md:w-5/6 px-10 md:px-16 z-50 transition-transform ease-in-out duration-1000 transform ${
             menuState.open ? "translate-x-0" : "-translate-x-full"
           }`}
         >
           {/* Headline */}
-          <div className="flex items-center pt-5 pr-5 bg-gradient-to-b from-azure to-navy text-white">
-            <div className="grow flex flex-col text-center">
-              <h5 className="text-white my-0">NYDF</h5>
-              <p className="text-sm">The change starts with YOU!</p>
-              <p className="text-sm">Yes You!</p>
+          <div className="flex flex-wrap justify-between items-center gap-10 py-10">
+            <div className="flex gap-4">
+              <div className="w-28 h-auto">
+                <Image
+                  alt="Happy Children"
+                  src={HappyChildren}
+                  quality={100}
+                  placeholder="blur"
+                  className="w-full h-full"
+                  style={{
+                    objectFit: "cover",
+                  }}
+                />
+              </div>
+
+              <div className="flex flex-col text-lg leading-5 tracking-wide">
+                <p>Nixerlex </p>
+                <p>Youth</p>
+                <p> Development</p>
+                <p>Foundation</p>
+              </div>
             </div>
 
-            <div className="w-2/5 h-auto">
-              <Image
-                alt="Happy Children"
-                src={HappyChildren}
-                quality={100}
-                placeholder="blur"
-                className="w-full h-full"
-                style={{
-                  objectFit: "cover",
-                }}
-              />
+            {/* Close Icon */}
+            <div>
+              <button
+                onClick={() => setMenuState({ open: false })}
+                className="flex justify-center items-center w-8 h-8 border rounded-full text-white hover:scale-110 focus:outline-none"
+              >
+                <Close />
+              </button>
             </div>
-          </div>
-
-          {/* Close Icon */}
-          <div className="absolute bottom-16 flex justify-center w-full">
-            <button
-              onClick={() => setMenuState({ open: false })}
-              className="py-3 w-1/2 rounded-xl bg-navy text-white focus:outline-none"
-            >
-              Close
-            </button>
           </div>
 
           {/* Menu Items */}
-          <div className="flex flex-col mt-12 px-5">
-            <div>
-              <h6 className="border-b-2 border-gray-300 py-1 mb-3">
-                Go to
-              </h6>
-              <ul>
+          <div className="grow flex flex-col py-10">
+            <div className="text-3xl">
+              <ul className="space-y-5">
                 {links.map((link, index) => (
                   <li className="py-2" key={index}>
                     <Link
                       href={link.ref}
-                      className="nav-link"
+                      className={`nav-link tracking-wider ${pathname === link.ref ? "text-orange-yellow" : ""}`}
                       onClick={() => setMenuState({ open: false })}
                     >
                       {link.text}
@@ -94,6 +99,12 @@ export default function SideMenu({ links }: SlideMenuProps) {
                 ))}
               </ul>
             </div>
+          </div>
+
+          {/* Footer */}
+          <div className="flex flex-col gap-2 items-end py-10">
+            <p>TheChangeStartsWithUS</p>
+            <p className="text-xs text-gray-500">&copy; 2024 Nixerlex Youth Development Foundation</p>
           </div>
         </div>
       </div>

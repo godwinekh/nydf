@@ -10,6 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         "orange-yellow": "#fdb61c",
+        "orange-yellow-light": "#FCF3F3",
+        "azure-light": "#90C5E269",
         azure: "#11a2f0",
         navy: "#041840",
       },

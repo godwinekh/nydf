@@ -51,7 +51,7 @@ export default function ShopBanner() {
       <div className="w-full flex justify-center pt-10">
         <Link
           href="/shop"
-          className="px-14 py-3 text-xl font-light text-white shadow-lg rounded-xl hover:bg-navy"
+          className="px-14 py-3 text-xl font-light text-navy shadow-lg rounded-xl bg-white hover:bg-navy hover:text-white"
         >
           Visit our store
         </Link>

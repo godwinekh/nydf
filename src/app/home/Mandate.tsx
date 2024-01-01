@@ -6,6 +6,7 @@ import VolleyBall from "@/images/icons/volleyBall";
 import Academic from "@/images/icons/academic";
 import Tools from "@/images/icons/tools";
 import Ellipsis from "../global/Ellipsis";
+import LearnMore from "../global/LearnMore";
 
 export function Mandate() {
   return (
@@ -133,6 +134,8 @@ export function Mandate() {
           </p>
         </div>
       </div>
+
+      <LearnMore href="/mandate" />
     </div>
   );
 }
