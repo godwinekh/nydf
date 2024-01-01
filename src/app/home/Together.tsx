@@ -44,7 +44,7 @@ export function Together() {
 
       <div>
         <Link
-          href="#"
+          href="https://forms.gle/SxPbGeMjxWRf25qQA"
           className="flex gap-2 items-center page-link"
           target="_blank"
         >
@@ -61,7 +61,11 @@ export function Together() {
       </div>
 
       <div className="my-12">
-        <Link href="#" className="flex gap-2 items-center page-link">
+        <Link
+          href="https://forms.gle/DZ2VG28ucpy9PZjUA"
+          className="flex gap-2 items-center page-link"
+          target="_blank"
+        >
           <span className="font-extrabold text-2xl capitalize my-3">
             volunteer
           </span>
@@ -74,7 +78,11 @@ export function Together() {
       </div>
 
       <div>
-        <Link href="#" className="flex gap-2 items-center page-link">
+        <Link
+          href="https://forms.gle/j2ugBHc7N2m3ptBw5"
+          className="flex gap-2 items-center page-link"
+          target="_blank"
+        >
           <span className="font-extrabold text-2xl capitalize my-3">
             membership
           </span>

@@ -3,6 +3,7 @@ import Volunteer from "@/images/volunteer.jpg";
 import Members from "@/images/members.jpg";
 import Donate from "@/images/donate.jpg";
 import Role from "./Role";
+import { Url } from "next/dist/shared/lib/router/router";
 
 export interface Role {
   category: string;
@@ -10,6 +11,7 @@ export interface Role {
   action: string;
   image: StaticImageData;
   color: "navy" | "azure" | "orange-yellow";
+  link: Url;
 };
 
 const items: Role[] = [
@@ -19,6 +21,7 @@ const items: Role[] = [
     action: "Join as a volunteer",
     color: "orange-yellow",
     image: Volunteer,
+    link: "https://forms.gle/DZ2VG28ucpy9PZjUA",
   },
   {
     category: "Member",
@@ -26,6 +29,7 @@ const items: Role[] = [
     action: "Become a member",
     color: "azure",
     image: Members,
+    link: "https://forms.gle/j2ugBHc7N2m3ptBw5",
   },
   {
     category: "Donor",
@@ -33,6 +37,7 @@ const items: Role[] = [
     action: "Join as a donor",
     color: "navy",
     image: Donate,
+    link: "https://forms.gle/SxPbGeMjxWRf25qQA",
   },
 ];
 
@@ -47,6 +52,7 @@ export default function Roles() {
           color={item.color}
           image={item.image}
           action={item.action}
+          link={item.link}
         />
       ))}
 

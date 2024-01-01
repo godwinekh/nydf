@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { Role } from "./Roles";
+import Link from "next/link";
 
-export default function Role({ category, image, text, action, color }: Role) {
+export default function Role({ category, image, text, action, color, link }: Role) {
   return (
     <div className="py-10">
       <h4 className={`mb-2 uppercase font-bold text-2xl text-${color}`}>{category}</h4>
@@ -22,9 +23,9 @@ export default function Role({ category, image, text, action, color }: Role) {
 
         <div className="w-full md:w-1/2 flex flex-col justify-between items-center gap-12 px-5">
           <p>{text}</p>
-          <button className={`px-8 py-3 rounded-xl text-white bg-${color}`}>
+          <Link href={link} target="_blank" className={`px-8 py-3 rounded-xl text-white bg-${color}`}>
             {action}
-          </button>
+          </Link>
         </div>
       </div>
     </div>

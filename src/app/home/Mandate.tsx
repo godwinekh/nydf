@@ -26,7 +26,7 @@ export function Mandate() {
                 or learning to do.
               </q>
             </p>
-            <p>- Pel&eacute;</p>
+            <p className="text-gray-500">- Pel&eacute;</p>
           </div>
           <Image
             alt="A girl making a furniture"
@@ -50,7 +50,7 @@ export function Mandate() {
                 those who prepare for it today.
               </q>
             </p>
-            <p>- Malcolm X</p>
+            <p className="text-gray-500">- Malcolm X</p>
           </div>
 
           <Image
@@ -76,7 +76,7 @@ export function Mandate() {
                 bodies and alert minds.
               </q>
             </p>
-            <p>- Robert Baden-Powell</p>
+            <p className="text-gray-500">- Robert Baden-Powell</p>
           </div>
 
           <Image
