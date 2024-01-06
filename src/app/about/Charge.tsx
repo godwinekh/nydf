@@ -13,7 +13,7 @@ export default function Charge() {
             As we look ahead, our commitment to youth development remains
             unwavering. We continue to innovate, collaborate, and strive for
             excellence in our programs, ensuring that each young individual we
-            touch is equipped with the tools to thrive inn an ever-evolving
+            touch is equipped with the tools to thrive in an ever-evolving
             world.
           </p>
         </div>

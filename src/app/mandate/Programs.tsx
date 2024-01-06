@@ -36,7 +36,7 @@ export default function Programs() {
           <p className="mt-8">
             To prepare underserved teenagers with the knowledge, soft skills,
             mindset and character needed to scale the first decade of adulthood
-            and onward, and follow-through on their dreams. We plan to achieve
+            and onward, and follow-through on their dreams. We achieve
             the above goal under the BRITE Futures program in two major ways:
           </p>
           <ul className="list-decimal pl-14 space-y-7 mt-4 mb-10">
@@ -54,11 +54,7 @@ export default function Programs() {
             <li>
               <p>BRITE Leadership Curriculum</p>
               <p>
-                It involves selecting a child with great potential but with
-                little or no support to go through school (primary and secondary
-                education only). It is good to note that recipients of this
-                program do not owe NYDF any mandatory obligations or future
-                financial returns.
+                The Leadership Curriculum is a well patterned outline of learning and practical workshops that help secondary students to develop leadership and other soft skills that would be beneficial to them as they prepare to tackle the world.
               </p>
             </li>
           </ul>
@@ -96,7 +92,7 @@ export default function Programs() {
           </h4>
 
           <p className="my-8">
-            To assist teenagers and young adults from ages 16 - 25 years old to
+            To assist teenagers and young adults from ages 16 - 23 years old to
             acquire skills from our partner vendors, to allow them become
             self-reliant and also have the means to help the poor and needy.
             It&apos;s time to invest in the future.
@@ -105,22 +101,17 @@ export default function Programs() {
             The following constitutes the approved skills in the training
             program:
           </p>
-          <ul className="list-decimal list-outside pl-6 mb-10">
-            <li>Fashion design &amp; tailoring</li>
-            <li>Photography &amp; videography</li>
-            <li>Hairdressing &amp; styling</li>
-            <li>Makeup</li>
-            <li>Carpentry</li>
-            <li>House painting</li>
+          <ul className="list-decimal list-outside pl-6 mb-10 capitalize">
+            <li>Tailoring</li>
             <li>Catering &amp; decoration</li>
-            <li>Auto mechanic</li>
-            <li>Plumbing</li>
-            <li>Electric &amp; house wiring</li>
-            <li>Floor &amp; tiling</li>
+            <li>Photography &amp; videography</li>
+            <li>Furniture making</li>
+            <li>Aluminium works</li>
+            <li>Electrical engineering</li>
+            <li>Graphic design</li>
             <li>UI/UX</li>
             <li>Frontend developer</li>
             <li>Backend developer</li>
-            <li>Graphic &amp; video design</li>
           </ul>
           <p className="text-sm lg:text-lg">
             To get more information on Project STED, application dates and

@@ -9,7 +9,7 @@ export default function Newsletter() {
           <input
             type="email"
             placeholder="Email"
-            className="grow p-3 rounded-xl bg-[#FEF9DE]"
+            className="md:grow p-3 rounded-xl bg-[#FEF9DE]"
           />
           <button className="px-4 py-3 text-navy bg-white  rounded-xl shadow-md">
             Subscribe

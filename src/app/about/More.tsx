@@ -46,8 +46,7 @@ export default function More() {
         <div className="px-5">
           <div className="pl-8 pt-6 pb-10 border-l-4 border-azure">
             <p>
-              The birth and evolution of the organization from the humble days
-              of Nixerlex Foundation to Nixerlex Youth Development Foundation
+              The birth and evolution of the organization from Nixerlex Foundation to Nixerlex Youth Development Foundation
               has been filled with rigorous work, dedication and determination
               pursued by a band of youth with pure hearts full of charity. Here
               is a highlight of our events year by year.
