@@ -3,6 +3,24 @@ import Image from "next/image";
 import { useState } from "react";
 import OfficeUnity from "@/images/people-office.jpg";
 
+const history = [
+  {
+    range: "2014 - 2018",
+    details: [
+      "The Nixerlex Foundation emerged from the passionate vision of its founder, Alexander Eke, whose dedication to social impact became the driving force behind its inception. Inspired by a deep-rooted belief in the power of education and community empowerment, Alexander embarked on this journey to address societal challenges alongside other young people who shared his passion.",
+      "In 2014, fueled by a desire to make a lasting difference, he established the Nixerlex Foundation with a focus on providing educational opportunities, fostering community development, and championing causes that resonate with his commitment to positive change.",
+      "2015 to 2018 saw the emergence of diverse community based projects and initiatives aimed at empowering young people with the tools, mindset and opportunities for self and community development.",
+    ],
+  },
+  {
+    range: "2019 - 2023",
+    details: [
+      "Between 2019 and 2021, the foundation launched the Young with Vision and Purpose initiative with focus on young adults between the ages of 13 and 20. The initiative was aimed at equipping the target audience with essential life skills from hygiene, career mapping, to education transitions among others. ",
+      "The foundation began a revaluation of its goals in early 2022 and thus birthed the change of name from Nixerlex Foundation to Nixerlex Youth Development Foundation in order to accommodate a wider range of development activities. Over the years, the foundation has grown, leaving an indelible mark on various communities through its unwavering dedication to creating a better, more inclusive world.",
+    ],
+  },
+];
+
 export default function More() {
   const [activeTab, setActiveTab] = useState<number | null>(null);
 
@@ -46,20 +64,21 @@ export default function More() {
         <div className="px-5">
           <div className="pl-8 pt-6 pb-10 border-l-4 border-azure">
             <p>
-              The birth and evolution of the organization from Nixerlex Foundation to Nixerlex Youth Development Foundation
-              has been filled with rigorous work, dedication and determination
-              pursued by a band of youth with pure hearts full of charity. Here
-              is a highlight of our events year by year.
+              The birth and evolution of the organization from Nixerlex
+              Foundation to Nixerlex Youth Development Foundation has been
+              filled with rigorous work, dedication and determination pursued by
+              a band of youth with pure hearts full of charity. Here is a
+              highlight of our events year by year.
             </p>
 
             <div className="flex flex-col space-y-8 py-8">
-              {["2014 - 2018", "2019 - 2022", "2023"].map((year, index) => (
-                <div key={year} className="rounded bg-orange-yellow-light">
+              {history.map((period, index) => (
+                <div key={index} className="rounded bg-orange-yellow-light">
                   <div
                     className="flex items-center justify-between cursor-pointer px-5"
                     onClick={() => handleToggleTab(index)}
                   >
-                    <h5 className="text-orange-yellow">{year}</h5>
+                    <h5 className="text-orange-yellow">{period.range}</h5>
                     <span
                       className={`transform ${
                         activeTab === index ? "rotate-0" : "rotate-180"
@@ -68,15 +87,12 @@ export default function More() {
                       &#9660;
                     </span>
                   </div>
-                  {activeTab === index && (
-                    <p className="px-5 mt-2 mb-8">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Animi explicabo sapiente fuga! Asperiores officiis
-                      suscipit explicabo beatae voluptas fugiat provident
-                      repellat dolor animi cumque nostrum cum rerum, quas soluta
-                      labore.
-                    </p>
-                  )}
+                  {activeTab === index &&
+                    period.details.map((paragraph, idx) => (
+                      <p key={idx} className="px-5 mt-2 mb-8">
+                        {paragraph}
+                      </p>
+                    ))}
                 </div>
               ))}
             </div>

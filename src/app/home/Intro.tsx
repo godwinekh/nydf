@@ -35,7 +35,7 @@ export function Intro() {
       </h2>
       <p className="paragraph indent-10 mb-5">
         <span className="text-2xl uppercase font-semibold">We believe</span>{" "}
-        that it is easier to build a child, than to repair broken women and men.
+        that our collective efforts, no matter how small, add to the betterment of the world.
         The wise, the prudent, the high and mighty and all those who contribute
         positively and meaningfully to the society today, were properly mentored
         and empowered.
