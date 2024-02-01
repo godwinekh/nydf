@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ------- Global Styles ------- */
+
 body {
-  @apply text-gray-950 tracking-normal lg:text-xl;
+  @apply text-gray-950 tracking-normal;
 }
 
 @layer base {
   h1 {
-    @apply font-bold text-4xl lg:text-5xl mb-1 capitalize;
+    @apply font-bold text-5xl lg:text-6xl mb-1 capitalize;
   }
   h2 {
     @apply font-bold text-3xl lg:text-4xl mb-10 capitalize w-full text-azure;
@@ -27,10 +29,6 @@ body {
   @apply px-4 md:px-12 lg:px-24;
 }
 
-.bg-wrap-intro {
-  @apply relative w-full h-96 -z-10 overflow-hidden mb-16 lg:rounded-3xl;
-}
-
 .bg-wrap {
   @apply relative w-full h-96 -z-10 overflow-hidden mb-16 lg:rounded-3xl;
 }
@@ -39,20 +37,97 @@ body {
   @apply absolute top-0 left-0 w-full h-full bg-black bg-opacity-30;
 }
 
+.animate-link {
+  @apply text-navy;
+  position: relative;
+  transition: color .4s ease-out;
+}
+
+.animate-link::after {
+  @apply border-b-navy;
+  border-top: .124rem solid;
+  border-radius: 1rem;
+  content: "";
+  position: absolute;
+    right: 100%;
+    bottom: .05rem;
+    left: 0;
+  transition: right .4s ease-in-out,
+              border-color .4s ease-out;
+}
+
+.animate-link:hover {
+  @apply text-azure;
+}
+
+.animate-link:hover::after {
+  @apply border-b-azure;
+  right: 0;
+}
+
+.input-box {
+  @apply rounded-lg p-3 focus:outline-amber-200;
+}
+
+/* ----------------------------------------------------- */
+
+
 .backdrop-2 {
   @apply absolute top-0 left-0 w-full h-full bg-black bg-opacity-60;
 }
 
-.paragraph {
-  @apply lg:text-lg;
+/* Topbar */
+
+/* ---------------------------- */
+
+/* Navigation */
+
+.nav-link {
+  @apply lg:px-5 py-2 rounded-full capitalize hover:text-azure transition-colors duration-300 ease-in-out;
+}
+
+/* ------------------------------ */
+
+/* Homepage */
+
+.hero-img {
+  @apply relative w-full h-[32rem] -z-10 overflow-hidden mb-16;
+}
+
+.namespace {
+  animation: text-slide 0.8s 0.5s ease-out forwards;
+  transform: translateY(-5em);
+  opacity: 0;
+}
+
+.slogan {
+  animation: text-slide 1s 0.5s ease-out forwards;
+  transform: translateY(5em);
+  opacity: 0;
 }
 
 .img-group {
   @apply relative w-full h-72 z-10 overflow-hidden mt-2 md:rounded-3xl;
+  transform: scale(1);
+  transition: transform 0.7s ease-in-out;
 }
 
-.nav-link {
-  @apply lg:px-5 py-2 rounded-full capitalize hover:text-orange-yellow;
+.img-group:hover {
+  transform: scale(1.07);
+}
+
+.fade-img {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-img:hover {
+  opacity: 0;
+  cursor: pointer;
+}
+
+.page-link {
+  @apply text-navy hover:text-azure transition-colors duration-300 ease-linear;
 }
 
 .prog-card {
@@ -63,20 +138,41 @@ body {
   @apply absolute -right-4 -top-5 p-3 bg-amber-200 rounded-full border-8 border-pink-50;
 }
 
-.input-box {
-  @apply rounded-lg p-3 focus:outline-amber-200;
+.paragraph {
+  @apply lg:text-lg;
 }
 
-.page-link {
-  @apply text-navy hover:text-azure;
-}
+/* ------------------------------ */
+
+
+/* About us */
 
 .years {
   @apply mt-10;
 }
 
+.circle-values {
+  @apply flex justify-center items-center w-32 h-32 lg:w-40 lg:h-40 rounded-full bg-orange-yellow text-white text-xl lg:text-2xl;
+
+}
+
+.circle-values:hover {
+  @apply bg-gradient-to-b from-azure to-navy cursor-pointer;
+  transition: color 1s ease-in-out;
+}
+
+/* ------------------------------ */
+
+/* Donate */
+
+.error-message {
+  @apply text-amber-600 text-xs
+}
+/* ------------------------------ */
+
+
 .circle-item {
-  @apply absolute w-40 h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full flex flex-wrap justify-center items-center ;
+  @apply absolute w-40 h-40 md:w-56 md:h-56 lg:w-72 lg:h-72 rounded-full flex flex-wrap justify-center items-center;
 }
 
 @media (min-width: 768px) {
@@ -88,5 +184,76 @@ body {
 @media (min-width: 1024px) {
   .bg-wrap-intro {
     height: 520px;
+  }
+}
+
+/* Shop Modal */
+.shop-bg {
+  animation: fade-in 0.5s 5s ease-in-out forwards;
+  opacity: 0;
+}
+.slide-down {
+  animation: slide-down 0.5s 5.5s ease-in-out forwards;
+  opacity: 0;
+}
+.slide-up {
+  animation: slide-up 1s ease-out forwards;
+}
+
+/* animations */
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes slide-down {
+  0% {
+    transform: translateY(-25rem);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-25rem);
+    opacity: 0;
+  }
+}
+
+@keyframes text-slide {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  0%,
+  25%,
+  50%,
+  75% {
+    transform: rotateZ(4deg);
+  }
+  12.5%,
+  37.5%,
+  62.5%,
+  87.5% {
+    transform: rotateZ(-4deg);
+  }
+  100% {
+    transform: rotateZ(0);
   }
 }

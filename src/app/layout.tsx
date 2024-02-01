@@ -1,12 +1,17 @@
+import React from "react";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "@/redux/provider";
 
-const poppins = Poppins({ weight: ["400", "500", "700"], style:["normal", "italic"], subsets: ["latin"] });
+const poppins = Poppins({
+  weight: ["400", "500", "700"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: "Nixerlex YDF",
+  title: "Nixerlex Youth Development Foundation",
   description:
     "Empowering young people for a prosperous world through education and other social initiatives",
   applicationName: "NixerlexYDF",
@@ -54,7 +59,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <ReduxProvider>{children}</ReduxProvider>
+        <ReduxProvider>
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );

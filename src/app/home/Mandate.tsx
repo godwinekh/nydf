@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import groupStudy from "@/images/collaboration.jpg";
 import handyWoman from "@/images/hardworking-youth.jpg";
@@ -5,10 +6,29 @@ import girlsPlayingBasketBall from "@/images/leisure.jpg";
 import VolleyBall from "@/images/icons/volleyBall";
 import Academic from "@/images/icons/academic";
 import Tools from "@/images/icons/tools";
-import Ellipsis from "../global/Ellipsis";
-import LearnMore from "../global/LearnMore";
+import Ellipsis from "../components/global/Ellipsis";
+import LearnMore from "../components/global/LearnMore";
+import { m as motion } from "framer-motion";
+import LightBulb from "@/images/icons/lightbulb";
 
 export function Mandate() {
+  const animations = {
+    offscreen: {
+      opacity: 0,
+      transform: "translateY(6rem)",
+    },
+    onscreen: {
+      opacity: 1,
+      transform: "translateY(0)",
+      ease: "anticipate",
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8,
+      },
+    },
+  };
+
   return (
     <div id="what-we-do" className="py-24 w-full bg-pink-50 layout relative">
       <h2 className="flex gap-3 items-center">
@@ -18,7 +38,7 @@ export function Mandate() {
 
       <div className="flex md:gap-5 lg:gap-8">
         <div className="img-group">
-          <div className="flex flex-col gap-4 justify-center items-center w-full h-full px-8 bg-navy">
+          <div className="quote flex flex-col gap-4 justify-center items-center w-full h-full px-8 bg-navy">
             <p className="text-white">
               <q>
                 Success is no accident. It is hard work, perseverance, learning,
@@ -35,7 +55,7 @@ export function Mandate() {
             placeholder="blur"
             sizes="100vw"
             fill
-            className="hover:cursor-pointer hover:opacity-0"
+            className="fade-img"
             style={{
               objectFit: "cover",
             }}
@@ -60,7 +80,7 @@ export function Mandate() {
             placeholder="blur"
             sizes="100vw"
             fill
-            className="hover:cursor-pointer hover:opacity-0"
+            className="fade-img"
             style={{
               objectFit: "cover",
             }}
@@ -86,7 +106,7 @@ export function Mandate() {
             placeholder="blur"
             sizes="100vw"
             fill
-            className="hover:cursor-pointer hover:opacity-0"
+            className="fade-img"
             style={{
               objectFit: "cover",
             }}
@@ -105,15 +125,29 @@ export function Mandate() {
       </div>
 
       {/* contents */}
-      <div className="flex flex-col md:flex-row md:flex-nowrap gap-8 justify-center">
-        <div className="prog-card">
+      <div className="flex flex-col md:flex-row md:flex-wrap lg:flex-nowrap gap-8 justify-center">
+        <motion.div
+          className="prog-card"
+          initial={animations.offscreen}
+          whileInView={animations.onscreen}
+          viewport={{ once: true, amount: 0.25 }}
+        >
           <div className="prog-icon">
             <Academic className="w-14 h-14 text-gray-900" />
           </div>
           <h5 className="text-white">Education</h5>
           <p>We offer support to bright minds on a case by case basis.</p>
-        </div>
-        <div className="prog-card">
+        </motion.div>
+
+        <motion.div
+          className="prog-card"
+          initial={animations.offscreen}
+          whileInView={{
+            ...animations.onscreen,
+            transition: { ...animations.onscreen.transition, delay: 0.3 },
+          }}
+          viewport={{ once: true, amount: 0.25 }}
+        >
           <div className="prog-icon">
             <Tools className="w-14 h-14 text-gray-900" />
           </div>
@@ -122,8 +156,17 @@ export function Mandate() {
             The STED program offers young people the opportunity to learn and
             earn as they master a skill.
           </p>
-        </div>
-        <div className="prog-card">
+        </motion.div>
+
+        <motion.div
+          className="prog-card"
+          initial={animations.offscreen}
+          whileInView={{
+            ...animations.onscreen,
+            transition: { ...animations.onscreen.transition, delay: 0.8 },
+          }}
+          viewport={{ once: true, amount: 0.25 }}
+        >
           <div className="prog-icon">
             <VolleyBall className="w-14 h-14" />
           </div>
@@ -132,7 +175,25 @@ export function Mandate() {
             Social development is as important, that is why we organize
             activities solely for the purpose of fun.
           </p>
-        </div>
+        </motion.div>
+
+        <motion.div
+          className="prog-card"
+          initial={animations.offscreen}
+          whileInView={{
+            ...animations.onscreen,
+            transition: { ...animations.onscreen.transition, delay: 0.8 },
+          }}
+          viewport={{ once: true, amount: 0.25 }}
+        >
+          <div className="prog-icon">
+            <LightBulb className="w-14 h-14 text-gray-900" />
+          </div>
+          <h5 className="text-white">Change Drive</h5>
+          <p>
+            Harnessing the power of community service to cultivate strong character and leadership skills.
+          </p>
+        </motion.div>
       </div>
 
       <LearnMore href="/mandate" />

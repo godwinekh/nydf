@@ -1,10 +1,34 @@
 import Image from "next/image";
 import bandOfYouths from "@/images/together.jpg";
 import ExternalLink from "@/images/icons/externalLink";
-import { SemiCircleTopLeft, SemiCircleBottomRight } from "./SemiCircle";
-import Ellipsis from "../global/Ellipsis";
+import {
+  SemiCircleTopLeft,
+  SemiCircleBottomRight,
+} from "../components/global/SemiCircle";
+import Ellipsis from "../components/global/Ellipsis";
 import Link from "next/link";
-import LearnMore from "../global/LearnMore";
+import LearnMore from "../components/global/LearnMore";
+
+const communityOptions = [
+  {
+    group: "donate",
+    urlToJoin: "https://forms.gle/SxPbGeMjxWRf25qQA",
+    brief:
+      "Support our cause by making a donation. Your contribution directly impacts the lives of young individuals and help create lasting positive change.",
+  },
+  {
+    group: "volunteer",
+    urlToJoin: "https://forms.gle/DZ2VG28ucpy9PZjUA",
+    brief:
+      "Become a part of our community by volunteering your time and expertise. Together, we can make a difference.",
+  },
+  {
+    group: "membership",
+    urlToJoin: "https://forms.gle/j2ugBHc7N2m3ptBw5",
+    brief:
+      "Don&apos;t just peak in through the windows, you can come under the roof too. Being a member goes beyond giving to the society. The community takes care of its own too.",
+  },
+];
 
 export function Together() {
   return (
@@ -42,57 +66,22 @@ export function Together() {
         </div>
       </div>
 
-      <div>
-        <Link
-          href="https://forms.gle/SxPbGeMjxWRf25qQA"
-          className="flex gap-2 items-center page-link"
-          target="_blank"
-        >
-          <span className="font-extrabold text-2xl capitalize my-3">
-            Donate
-          </span>
-          <ExternalLink className="w-8 h-8" />
-        </Link>
-        <p className="paragraph">
-          Support our cause by making a donation. Your contribution directly
-          impacts the lives of young individuals and help create lasting
-          positive change.
-        </p>
-      </div>
-
-      <div className="my-12">
-        <Link
-          href="https://forms.gle/DZ2VG28ucpy9PZjUA"
-          className="flex gap-2 items-center page-link"
-          target="_blank"
-        >
-          <span className="font-extrabold text-2xl capitalize my-3">
-            volunteer
-          </span>
-          <ExternalLink className="w-8 h-8" />
-        </Link>
-        <p className="paragraph">
-          Become a part of our community by volunteering your time and
-          expertise. Together, we can make a difference.
-        </p>
-      </div>
-
-      <div>
-        <Link
-          href="https://forms.gle/j2ugBHc7N2m3ptBw5"
-          className="flex gap-2 items-center page-link"
-          target="_blank"
-        >
-          <span className="font-extrabold text-2xl capitalize my-3">
-            membership
-          </span>
-          <ExternalLink className="w-8 h-8" />
-        </Link>
-        <p className="paragraph">
-          Don&apos;t just peak in through the windows, you can come under the
-          roof too. Being a member goes beyond giving to the society. The
-          community takes care of its own too.
-        </p>
+      <div className="space-y-12">
+        {communityOptions.map((option, index) => (
+          <div key={index}>
+            <Link
+              href={option.urlToJoin}
+              className="flex w-72 gap-2 items-center page-link"
+              target="_blank"
+            >
+              <span className="font-extrabold text-2xl capitalize my-3">
+                {option.group}
+              </span>
+              <ExternalLink className="w-8 h-8" />
+            </Link>
+            <p className="paragraph">{option.brief}</p>
+          </div>
+        ))}
       </div>
 
       <LearnMore href="/community" />

@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { StaticImageData } from "next/image";
 
 interface Item {
@@ -20,7 +20,7 @@ const initialState: CartState = {
   cartItems: [],
   totalAmount: 0,
   totalItems: 0,
-}
+};
 
 const cartSlice = createSlice({
   name: "cart",
@@ -29,9 +29,9 @@ const cartSlice = createSlice({
     addToCart(state) {
       state.totalItems += 1;
     },
-  }
+  },
 });
 
-export const {addToCart,} = cartSlice.actions
+export const { addToCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -13,7 +13,8 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import cartReducer from "./features/cart/cart"
+import cartReducer from "./features/cart/cart";
+import modalReducer from "./features/modals/modals";
 
 const persistConfig = {
   key: "root",
@@ -22,7 +23,8 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  cart: cartReducer
+  cart: cartReducer,
+  modal: modalReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
