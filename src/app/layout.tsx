@@ -1,4 +1,5 @@
 import React from "react";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   title: "Nixerlex Youth Development Foundation",
   description:
     "Empowering young people for a prosperous world through education and other social initiatives",
-  applicationName: "NixerlexYDF",
+  applicationName: "Nixerlex Foundation",
   referrer: "origin-when-cross-origin",
   keywords: [
     "NYDF",
@@ -28,14 +29,6 @@ export const metadata: Metadata = {
     "nixerlex foundation",
     "bright futures",
   ],
-  authors: [{ name: "Alexander Eke" }, { name: "Ekhueorohan Godwin" }],
-  creator: "Ekhueorohan Godwin",
-  publisher: "Sebastian Markbåge",
-  formatDetection: {
-    email: true,
-    address: false,
-    telephone: true,
-  },
   robots: {
     index: false,
     follow: true,
@@ -61,6 +54,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         <ReduxProvider>
           {children}
+          <Analytics />
         </ReduxProvider>
       </body>
     </html>
