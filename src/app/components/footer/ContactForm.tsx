@@ -1,7 +1,7 @@
 "use client";
 import { toggleContactFormModal } from "@/redux/features/modals/modals";
 import { useAppDispatch } from "@/redux/hooks";
-import SMTPTransport from "nodemailer/lib/smtp-transport";
+// import SMTPTransport from "nodemailer/lib/smtp-transport";
 import React, { useState } from "react";
 
 export default function ContactForm() {
@@ -24,27 +24,27 @@ export default function ContactForm() {
     dispatch(toggleContactFormModal());
     return;
 
-    try {
-      const response = await fetch("/api/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+    // try {
+    //   const response = await fetch("/api/", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify(formData),
+    //   });
 
-      if (response.ok) {
-        console.log("Email sent successfully", response);
-        // Handle success, e.g., show a success message
-        const responseData: SMTPTransport.SentMessageInfo = await response.json();
-        console.log(responseData)
-      } else {
-        console.error("Failed to send email");
-        // Handle failure, e.g., show an error message
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
+    //   if (response.ok) {
+    //     console.log("Email sent successfully", response);
+    //     // Handle success, e.g., show a success message
+    //     const responseData: SMTPTransport.SentMessageInfo = await response.json();
+    //     console.log(responseData)
+    //   } else {
+    //     console.error("Failed to send email");
+    //     // Handle failure, e.g., show an error message
+    //   }
+    // } catch (error) {
+    //   console.error("Error:", error);
+    // }
   };
 
   return (
