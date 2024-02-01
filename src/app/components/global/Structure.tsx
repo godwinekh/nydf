@@ -7,7 +7,8 @@ import { LazyMotion } from "framer-motion";
 import TopBar from "../header/TopBar";
 import Connect from "../footer/Connect";
 import BottomBar from "../footer/BottomBar";
-import { useAppSelector } from "@/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { toggleShopAdModal } from "@/redux/features/modals/modals";
 
 const ShopModal = dynamic(() => import("../modals/ShopModal"), { ssr: false });
 const ContactFormModal = dynamic(() => import("../modals/ContactFormModal"), {
@@ -15,37 +16,39 @@ const ContactFormModal = dynamic(() => import("../modals/ContactFormModal"), {
 });
 
 export default function Structure({ children }: { children: React.ReactNode }) {
-  const [showModal, setShowModal] = useState<boolean>(false);
-  const { showContactForm } = useAppSelector(
+  const { showContactForm, showShopAd } = useAppSelector(
     (state) => state.modal
   );
+  const dispatch = useAppDispatch();
   const pathname = usePathname();
   const isShop = pathname === "/shop";
 
   const closeModal = () => {
     localStorage.setItem("hasModalBeenShown", "true");
-    setShowModal(false);
-
-    //clear the localStorage after one hour
-    const timeoutId = setTimeout(() => {
-      localStorage.removeItem("hasModalBeenShown");
-    }, 3600);
-
-    return () => clearTimeout(timeoutId);
+    dispatch(toggleShopAdModal(false));
   };
 
-  useEffect(() => {
-    const hasModalBeenShown = localStorage.getItem("hasModalBeenShown");
-    setShowModal(!hasModalBeenShown);
+ useEffect(() => {
+   const storedExpirationTime = localStorage.getItem("modalExpirationTime");
+   const expirationTime = storedExpirationTime
+     ? parseInt(storedExpirationTime, 10)
+     : Date.now() + 1800000;
 
-    if (!isShop && showModal) {
-      const timeoutId = setTimeout(() => {
-        setShowModal(true);
-      }, 1000);
+   if (!localStorage.getItem("hasModalBeenShown") && !isShop) {
+     dispatch(toggleShopAdModal(true));
+   }
 
-      return () => clearTimeout(timeoutId);
-    }
-  }, [isShop, showModal]);
+   const timeoutId = setTimeout(() => {
+     localStorage.removeItem("hasModalBeenShown");
+   }, expirationTime - Date.now());
+
+   localStorage.setItem("modalExpirationTime", expirationTime.toString());
+
+   return () => {
+     clearTimeout(timeoutId);
+     localStorage.removeItem("modalExpirationTime");
+   };
+ }, [isShop, dispatch]);
 
   const loadFeatures = () =>
     import("../../features").then((res) => res.default);
@@ -57,7 +60,7 @@ export default function Structure({ children }: { children: React.ReactNode }) {
         {children}
         <Connect />
 
-        {!isShop && showModal && <ShopModal closeModal={closeModal} />}
+        {!isShop && showShopAd && <ShopModal closeModal={closeModal} />}
 
         {showContactForm && <ContactFormModal />}
       </main>
