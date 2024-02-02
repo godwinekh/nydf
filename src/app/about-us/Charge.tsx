@@ -31,7 +31,7 @@ export default function Charge() {
 
           <p className="pt-5">
             Explore our{" "}
-            <Link href="/community" className="font-bold animate-link">
+            <Link href="/get-involved" className="font-bold animate-link">
               Get Involved
             </Link>{" "}
             page to see how you can contribute to our mission and be a part of

@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import { unstable_noStore as noStore} from "next/cache"
 import { AnimatePresence, m as motion } from "framer-motion";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import { FlutterwaveConfig } from "flutterwave-react-v3/dist/types";
 import { useFormik } from "formik";
 import donateSchema from "./donateSchema";
-import { useRouter } from "next/navigation";
 
 export default function DonateForm() {
+  noStore();
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
@@ -32,8 +34,10 @@ export default function DonateForm() {
     },
   });
 
+  const flutterwavePublicKey = process.env.FLUTTERWAVE_KEY!;
+
   const config: FlutterwaveConfig = {
-    public_key: process.env.NEXT_PUBLIC_FLUTTERWAVE_KEY!,
+    public_key: flutterwavePublicKey,
     tx_ref: Date.now().toLocaleString(),
     amount: parseInt(formik.values.amount),
     currency: "NGN",

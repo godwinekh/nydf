@@ -45,7 +45,7 @@ export default function Collaborate() {
           </h3>
           <p>
             Explore our{" "}
-            <Link href="/community" className="font-bold">
+            <Link href="/get-involved" className="font-bold animate-link">
               Get Involved
             </Link>{" "}
             page to see how you can contribute to our mission and be a part of

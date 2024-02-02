@@ -37,8 +37,10 @@ export function Intro() {
           Empowering young people for a prosperous world
         </h2>
         <p className="paragraph indent-10 mb-5">
-          <span className="text-2xl uppercase font-semibold">to foster</span>{" "}
-          a vibrant and prosperous society, it is imperative that we actively empower and provide a robust framework, serving as a healthy blueprint for the younger generation.
+          <span className="text-2xl uppercase font-semibold">We believe</span> that our collective efforts, no matter how small, add to the betterment of the world. To foster a
+          vibrant and prosperous society, it is imperative that we actively
+          empower and provide a robust framework, serving as a healthy blueprint
+          for the younger generation.
         </p>
         <p className="paragraph indent-10 mb-5">
           As a community,{" "}

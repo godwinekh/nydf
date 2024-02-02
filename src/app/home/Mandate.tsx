@@ -189,14 +189,14 @@ export function Mandate() {
           <div className="prog-icon">
             <LightBulb className="w-14 h-14 text-gray-900" />
           </div>
-          <h5 className="text-white">Change Drive</h5>
+          <h5 className="text-white">Community Building</h5>
           <p>
             Harnessing the power of community service to cultivate strong character and leadership skills.
           </p>
         </motion.div>
       </div>
 
-      <LearnMore href="/mandate" />
+      <LearnMore href="/what-we-do" />
     </div>
   );
 }

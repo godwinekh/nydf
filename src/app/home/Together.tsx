@@ -84,7 +84,7 @@ export function Together() {
         ))}
       </div>
 
-      <LearnMore href="/community" />
+      <LearnMore href="/get-involved" />
 
       <SemiCircleBottomRight />
       <SemiCircleTopLeft />
