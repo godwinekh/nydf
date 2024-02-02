@@ -34,7 +34,7 @@ export default function DonateForm() {
     },
   });
 
-  const flutterwavePublicKey = process.env.FLUTTERWAVE_KEY!;
+  const flutterwavePublicKey = process.env.FLUTTERWAVE_API!;
 
   const config: FlutterwaveConfig = {
     public_key: flutterwavePublicKey,

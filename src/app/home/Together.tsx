@@ -26,7 +26,7 @@ const communityOptions = [
     group: "membership",
     urlToJoin: "https://forms.gle/j2ugBHc7N2m3ptBw5",
     brief:
-      "Don&apos;t just peak in through the windows, you can come under the roof too. Being a member goes beyond giving to the society. The community takes care of its own too.",
+      "Don't just peak in through the windows, you can come under the roof too. Being a member goes beyond giving to the society. The community takes care of its own too.",
   },
 ];
 
