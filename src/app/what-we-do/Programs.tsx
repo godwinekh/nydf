@@ -11,7 +11,7 @@ export default function Programs() {
       {/* BRITE Futures Program */}
       <div className="py-16">
         <div
-          className="relative w-full h-96 -z-10 overflow-hidden mb-5 lg:rounded-3xl"
+          className="relative w-full h-96 -z-10 overflow-hidden mb-5 rounded-3xl"
           style={{ height: "450px" }}
         >
           <Image
@@ -73,7 +73,7 @@ export default function Programs() {
       {/* Project STED */}
       <div className="py-16">
         <div
-          className="relative w-full h-96 -z-10 overflow-hidden mb-5 lg:rounded-3xl"
+          className="relative w-full h-96 -z-10 overflow-hidden mb-5 rounded-3xl"
           style={{ height: "450px" }}
         >
           <Image
@@ -127,7 +127,7 @@ export default function Programs() {
       {/* NYDF Open COURT */}
       <div className="py-16">
         <div
-          className="relative w-full h-96 -z-10 overflow-hidden mb-5 lg:rounded-3xl"
+          className="relative w-full h-96 -z-10 overflow-hidden mb-5 rounded-3xl"
           style={{ height: "450px" }}
         >
           <Image
@@ -175,7 +175,7 @@ export default function Programs() {
       {/* Change Drive */}
       <div className="py-16">
         <div
-          className="relative w-full h-96 -z-10 overflow-hidden mb-5 lg:rounded-3xl"
+          className="relative w-full h-96 -z-10 overflow-hidden mb-5 rounded-3xl"
           style={{ height: "450px" }}
         >
           <Image

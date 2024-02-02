@@ -13,7 +13,7 @@ export default function ThankYou() {
   return (
     <Structure>
       <div className="py-16 px-5 text-center flex flex-col gap-8 justify-center items-center w-full h-full bg-gradient-to-b from-azure-light to-white">
-        <h5>
+        <h5 className="">
           {donationStatus === "successful"
             ? "Donation was successful"
             : "Oops! We did not receive your donation"}
@@ -24,9 +24,12 @@ export default function ThankYou() {
           transition={{ delay: 0.5, bounce: 0.5 }}
         >
           {donationStatus === "successful" ? (
-            <ThumbsUp className="w-72 h-72 text-navy" />
+            <ThumbsUp
+              className="w-36
+h-36 md:w-72 md:h-72 text-green-700"
+            />
           ) : (
-            <p className="text-9xl">&#128542;</p>
+            <p className="text-8xl md:text-9xl">&#128542;</p>
           )}
         </motion.div>
 
@@ -35,7 +38,7 @@ export default function ThankYou() {
             initial={{ y: 200, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1 }}
-            className="text-3xl md:text-5xl mb-1 font-bold text-azure"
+            className={`text-3xl md:text-5xl mb-1 font-bold ${donationStatus === "successful" ? "text-green-700" : "text-amber-500"}`}
           >
             {donationStatus === "successful"
               ? "Thank You!"

@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is the official repo for [Nixerlex Youth Development Foundation](https://nixerlexfoundation.org/) founded in 2014.
 
-## Getting Started
+## Introduction
 
-First, run the development server:
+Nixerlex Youth Development Foundation has been at the forefront of
+youth empowerment for the past eight years. Our journey began with a
+vision to create a lasting impact on the lives of young individuals,
+fostering personal growth, and driving positive change within
+communities. [Learn more](https://nixerlexfoundation.org/about-us).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Our Vision & Mission Statements
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Our vision is to create a prosperous world built by young individuals with growth
+mindsets
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Our mission is clear: To implement programs that inspire, empower,
+and advocate for the success of young individuals. We believe in
+equipping the youth with the skills, education, mindset and
+opportunities needed to shape a prosperous future for themselves and
+their communities.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Stay Connected
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+To know more about our programs and what motivates us, you can go through our [Web Application](https://nixerlexfoundation.org) and you can also follow us on  [Facebook](https://facebook.com/nixerlexfoundation) and [Instagram](https://instagram.com/nixerlexfoundation) to keep up with our activities and impacts.

@@ -4,13 +4,17 @@ import { usePathname } from "next/navigation";
 import Ellipsis from "../global/Ellipsis";
 import ContactForm from "./ContactForm";
 import Socials from "../global/Socials";
+import Link from "next/link";
 
 
 export default function Connect() {
   const pathname = usePathname();
 
   return (
-    <div id="contact" className="py-24 w-full layout relative bg-orange-yellow-light">
+    <div
+      id="contact"
+      className="py-24 w-full layout relative bg-orange-yellow-light"
+    >
       <h2 className="flex items-center gap-3">
         <span>Connect with us</span>
         <Ellipsis />
@@ -58,7 +62,22 @@ export default function Connect() {
         </div>
       )}
 
-     <Socials color="yellow" />
+      {/* Text for /donate */}
+      {pathname.startsWith("/donate") && (
+        <div>
+          <p className="leading-8">
+            For further support and assistance, please contact us on:{" "}
+            <Link
+              href="mailto:connect@nixerlexfoundation.org"
+              className="animate-link font-bold"
+            >
+              connect@nixerlexfoundation.org
+            </Link>
+          </p>
+        </div>
+      )}
+
+      <Socials color="yellow" />
 
       <div id="feedback">
         <h5 className="sm:max-md:mb-8 my-5">We would like to hear from you</h5>

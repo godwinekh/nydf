@@ -122,8 +122,7 @@ export default function More() {
         </div>
 
         <div
-          className="relative w-full h-96 -z-10 overflow-hidden lg:rounded-3xl my-16"
-          style={{ height: "450px" }}
+          className="relative w-full h-72 md:h-96 xl:h-[450px] -z-10 overflow-hidden rounded-3xl my-16"
         >
           <Image
             alt="Group united by a cause"

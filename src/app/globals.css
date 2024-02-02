@@ -30,11 +30,15 @@ body {
 }
 
 .bg-wrap {
-  @apply relative w-full h-96 -z-10 overflow-hidden mb-16 lg:rounded-3xl;
+  @apply relative w-full h-96 -z-10 overflow-hidden mb-16 rounded-md md:rounded-xl lg:rounded-3xl;
 }
 
 .backdrop {
   @apply absolute top-0 left-0 w-full h-full bg-black bg-opacity-30;
+}
+
+.backdrop-2 {
+  @apply absolute top-0 left-0 w-full h-full bg-black bg-opacity-60;
 }
 
 .animate-link {
@@ -69,16 +73,33 @@ body {
   @apply rounded-lg p-3 focus:outline-amber-200;
 }
 
+.page-intro {
+  @apply flex flex-col-reverse md:flex-row md:gap-4 items-center justify-center relative overflow-hidden rounded-3xl;
+}
+
+.page-intro .image {
+  @apply w-full h-full rounded-b-3xl md:rounded-3xl
+}
+
+.page-intro .title {
+  @apply w-full text-center md:text-left py-5 md:w-1/2 bg-orange-yellow bg-opacity-95 md:bg-inherit;
+}
+
+.page-intro .title .heading {
+  @apply md:mb-4 text-gray-900 font-extrabold;
+}
+
+.page-intro .title .subheading {
+  @apply text-inherit;
+}
+
 /* ----------------------------------------------------- */
 
-
-.backdrop-2 {
-  @apply absolute top-0 left-0 w-full h-full bg-black bg-opacity-60;
-}
 
 /* Topbar */
 
 /* ---------------------------- */
+
 
 /* Navigation */
 
@@ -87,6 +108,7 @@ body {
 }
 
 /* ------------------------------ */
+
 
 /* Homepage */
 
@@ -107,7 +129,7 @@ body {
 }
 
 .img-group {
-  @apply relative w-full h-72 z-10 overflow-hidden mt-2 md:rounded-3xl;
+  @apply relative w-full h-72 z-10 overflow-hidden mt-2 rounded-md md:rounded-3xl;
   transform: scale(1);
   transition: transform 0.7s ease-in-out;
 }

@@ -48,7 +48,7 @@ export default function DonateForm() {
       description: "One-time Donation.",
       logo: "@/images/nf-logo.png",
     },
-    redirect_url: "http://localhost:3000/donate/thank-you",
+    redirect_url: "https://nixerlexfoundation.org/donate/thank-you",
   };
 
   const handleFlutterPayment = useFlutterwave(config);
