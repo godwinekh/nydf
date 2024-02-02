@@ -1,11 +1,23 @@
+"use client";
 import Image from "next/image";
-import { Role } from "./Roles";
 import Link from "next/link";
+import { m as motion } from "framer-motion";
 
-export default function Role({ category, image, text, action, color, link }: Role) {
+import { Role } from "./Roles";
+
+export default function Role({
+  category,
+  image,
+  text,
+  action,
+  color,
+  link,
+}: Role) {
   return (
     <div className="py-10">
-      <h4 className={`mb-2 uppercase font-bold text-2xl text-${color}`}>{category}</h4>
+      <h4 className={`mb-2 uppercase font-bold text-2xl text-${color}`}>
+        {category}
+      </h4>
 
       <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
         <div className="w-full md:w-1/2 relative">
@@ -23,9 +35,15 @@ export default function Role({ category, image, text, action, color, link }: Rol
 
         <div className="w-full md:w-1/2 flex flex-col justify-between items-center gap-12 px-5">
           <p>{text}</p>
-          <Link href={link} target="_blank" className={`px-8 py-3 rounded-xl text-white bg-${color}`}>
-            {action}
-          </Link>
+          <motion.div initial={{ scale: 1 }} whileHover={{ scale: 1.2 }} className="hover:shadow-lg">
+            <Link
+              href={link}
+              target="_blank"
+              className={`px-8 py-3 rounded-xl text-white bg-${color}`}
+            >
+              {action}
+            </Link>
+          </motion.div>
         </div>
       </div>
     </div>
