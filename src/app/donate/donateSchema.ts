@@ -16,6 +16,10 @@ const donateSchema = yup.object().shape({
     .string()
     .matches(/^[0-9]{10,11}$/, "Invalid phone number")
     .required("Phone number is required"),
+  currency: yup
+    .string()
+    .oneOf(["ngn", "usd"], "Invalid currency")
+    .required("Currency is required"),
 });
 
 export default donateSchema;
