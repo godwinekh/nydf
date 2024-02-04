@@ -78,6 +78,7 @@ export default function DonateForm() {
 
       const data = await response.json();
 
+      console.log(data.secretKey);
       setPaymentApiKey(data.secretKey);
     } catch (error) {
       console.error("Error fetching secret key:", error);
