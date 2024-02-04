@@ -255,7 +255,7 @@ export default function DonateForm() {
             </button>
             <button
               type="submit"
-              className={`flex items-center bg-navy p-3 text-white rounded-xl ${
+              className={`flex justify-center items-center bg-navy p-3 text-white rounded-xl ${
                 loading ? "text-xs" : "text-sm"
               }`}
               disabled={loading}
