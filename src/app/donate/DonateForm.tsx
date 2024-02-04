@@ -6,6 +6,7 @@ import { FlutterwaveConfig } from "flutterwave-react-v3/dist/types";
 import { useFormik } from "formik";
 import donateSchema from "./donateSchema";
 import CaretDown from "@/app/components/icons/caretDown";
+import Refresh from "../components/icons/refresh";
 
 const calcAmountWithCharges = (amount: string) => {
   const amountInt = parseInt(amount);
@@ -27,6 +28,8 @@ export default function DonateForm() {
   const [paymentApiKey, setPaymentApiKey] = useState<string>("");
   const [showCurrencies, setShowCurrencies] = useState<boolean>(false);
   const [payCharges, setPayCharges] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+
   const router = useRouter();
   const formik = useFormik({
     initialValues: {
@@ -38,17 +41,22 @@ export default function DonateForm() {
     },
     validationSchema: donateSchema,
     onSubmit: (values) => {
-      // Handle form submission
-      // console.log("Form submitted with values:", values);
-      // console.log(paymentApiKey);
+      setLoading(true);
 
-      handleFlutterPayment({
-        callback: (response) => {
-          // console.log(response);
-          closePaymentModal();
-        },
-        onClose: () => {},
-      });
+      try {
+        handleFlutterPayment({
+          callback: (response) => {
+            // console.log(response);
+            closePaymentModal();
+          },
+          onClose: () => {
+            setLoading(false);
+          },
+        });
+      } catch (error) {
+        console.error("Payment error:", error);
+        setLoading(false);
+      }
     },
   });
   const amountWithCharges = calcAmountWithCharges(formik.values.amount);
@@ -63,8 +71,6 @@ export default function DonateForm() {
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const isChecked: boolean = event.target.checked;
-
-    console.log(formik.values.amount);
     setPayCharges(isChecked);
   };
 
@@ -78,7 +84,6 @@ export default function DonateForm() {
 
       const data = await response.json();
 
-      console.log(data.secretKey);
       setPaymentApiKey(data.secretKey);
     } catch (error) {
       console.error("Error fetching secret key:", error);
@@ -244,15 +249,19 @@ export default function DonateForm() {
             <button
               type="button"
               onClick={() => router.back()}
-              className="bg-gray-900 p-4 text-white rounded-xl text-sm"
+              className="bg-gray-900 px-4 py-2  text-white rounded-xl text-sm"
             >
-              Return to Main Website
+              Go Back
             </button>
             <button
               type="submit"
-              className="bg-navy p-3 text-white rounded-xl text-sm"
+              className={`flex items-center bg-navy p-3 text-white rounded-xl ${
+                loading ? "text-xs" : "text-sm"
+              }`}
+              disabled={loading}
             >
-              Donate
+              {loading && <Refresh className="animate-spin h-5 w-5 mr-2" />}
+              {loading ? "Processing" : "Donate"}
             </button>
           </div>
         </form>
