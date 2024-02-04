@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { unstable_noStore as noStore } from "next/cache";
 import { AnimatePresence, m as motion } from "framer-motion";
 import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import { FlutterwaveConfig } from "flutterwave-react-v3/dist/types";
 import { useFormik } from "formik";
 import donateSchema from "./donateSchema";
-import CaretDown from "@/images/icons/caretDown";
+import CaretDown from "@/app/components/icons/caretDown";
 
 const calcAmountWithCharges = (amount: string) => {
   const amountInt = parseInt(amount);
@@ -48,9 +47,7 @@ export default function DonateForm() {
           // console.log(response);
           closePaymentModal();
         },
-        onClose: () => {
-
-        },
+        onClose: () => {},
       });
     },
   });
@@ -233,7 +230,11 @@ export default function DonateForm() {
 
             {payCharges && amountWithCharges.toString() !== "NaN" && (
               <p className="text-azure">
-                You are now paying a total of NGN <span className="text-base">{amountWithCharges.toLocaleString()}</span>. Thank you.
+                You are now paying a total of NGN{" "}
+                <span className="text-base">
+                  {amountWithCharges.toLocaleString()}
+                </span>
+                . Thank you.
               </p>
             )}
           </div>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import NydfNamedLogo from "@/images/nf-named-logo.png";
+import NydfNamedLogo from "@@/assets/images/nf-named-logo.png";
 import { Fragment } from "react";
 
 export default function BottomBar() {

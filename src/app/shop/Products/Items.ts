@@ -1,7 +1,7 @@
-import Hoodies from "@/images/hoodie.png";
-import WaterBottle from "@/images/water-bottle.png";
-import Bag from "@/images/bag.png";
-import Tshirt from "@/images/tshirt.jpg";
+import Hoodies from "@@/assets/images/hoodie.png";
+import WaterBottle from "@@/assets/images/water-bottle.png";
+import Bag from "@@/assets/images/bag.png";
+import Tshirt from "@@/assets/images/tshirt.jpg";
 
 const items = [
   {

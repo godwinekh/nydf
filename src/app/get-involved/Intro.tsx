@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { m as motion } from "framer-motion";
 
-import SchoolTeacher from "@/images/group-african-kids-paying-attention-class.jpg";
+import SchoolTeacher from "@@/assets/images/group-african-kids-paying-attention-class.jpg";
 import { SemiCircleBottomRight } from "../components/global/SemiCircle";
 
 

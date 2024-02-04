@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import YoungMillenials from "@/images/young-millennials.jpg";
+import YoungMillenials from "@@/assets/images/young-millennials.jpg";
 import { SemiCircleBottomRight } from "../components/global/SemiCircle";
 
 import { m as motion } from "framer-motion";

@@ -1,9 +1,9 @@
 "use client";
-import Image, { StaticImageData } from "next/image";
-import Minus from "@/images/icons/minus";
-import Plus from "@/images/icons/plus";
-import Heart from "@/images/icons/heart";
 import { useEffect, useState } from "react";
+import Image, { StaticImageData } from "next/image";
+import Minus from "@/app/components/icons/minus";
+import Plus from "@/app/components/icons/plus";
+import Heart from "@/app/components/icons/heart";
 import { useAppDispatch } from "@/redux/hooks";
 import { addToCart } from "@/redux/features/cart/cart";
 
@@ -91,9 +91,9 @@ export default function Product({ name, price, image }: ProductProps) {
       setShowWarning(false);
     }, 5000);
 
-     return () => {
-       clearTimeout(timeoutId);
-     };
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [showWarning]);
 
   return (
@@ -198,7 +198,11 @@ export default function Product({ name, price, image }: ProductProps) {
             Add to cart
           </button>
 
-          {showWarning && <p className="absolute -top-20 right-0 w-1/2 px-5 py-2 text-center text-xs rounded-lg bg-gray-100">Please select a size and color before adding item to cart</p>}
+          {showWarning && (
+            <p className="absolute -top-20 right-0 w-1/2 px-5 py-2 text-center text-xs rounded-lg bg-gray-100">
+              Please select a size and color before adding item to cart
+            </p>
+          )}
         </div>
       </div>
     </div>

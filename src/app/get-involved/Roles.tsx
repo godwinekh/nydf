@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
-import Volunteer from "@/images/volunteer.jpg";
-import Members from "@/images/members.jpg";
-import Donate from "@/images/donate.jpg";
+import Volunteer from "@@/assets/images/volunteer.jpg";
+import Members from "@@/assets/images/members.jpg";
+import Donate from "@@/assets/images/donate.jpg";
 import Role from "./Role";
 import { Url } from "next/dist/shared/lib/router/router";
 

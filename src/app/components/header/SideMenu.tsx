@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import HappyChildren from "@/images/nf-logo.png";
-import Hamburger from "@/images/icons/hamburger";
-import Close from "@/images/icons/close";
+import HappyChildren from "@@/assets/images/nf-logo.png";
+import Hamburger from "@/app/components/icons/hamburger";
+import Close from "@/app/components/icons/close";
 import { usePathname } from "next/navigation";
 
 interface NavigationLink {
@@ -90,7 +90,9 @@ export default function SideMenu({ links }: SlideMenuProps) {
                   <li className="py-2" key={index}>
                     <Link
                       href={link.ref}
-                      className={`nav-link tracking-wider ${pathname === link.ref ? "text-orange-yellow" : ""}`}
+                      className={`nav-link tracking-wider ${
+                        pathname === link.ref ? "text-orange-yellow" : ""
+                      }`}
                       onClick={() => setMenuState({ open: false })}
                     >
                       {link.text}
@@ -104,7 +106,9 @@ export default function SideMenu({ links }: SlideMenuProps) {
           {/* Footer */}
           <div className="flex flex-col gap-2 items-end py-10">
             <p>TheChangeStartsWithUS</p>
-            <p className="text-xs text-gray-500">&copy; 2024 Nixerlex Youth Development Foundation</p>
+            <p className="text-xs text-gray-500">
+              &copy; 2024 Nixerlex Youth Development Foundation
+            </p>
           </div>
         </div>
       </div>

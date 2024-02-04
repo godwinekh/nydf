@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Teamwork from "@/images/teamwork.jpg";
+import Teamwork from "@@/assets/images/teamwork.jpg";
 import LearnMore from "../components/global/LearnMore";
 
 export default function Impact() {

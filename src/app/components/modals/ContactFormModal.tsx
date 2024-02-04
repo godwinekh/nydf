@@ -3,8 +3,8 @@ import { AnimatePresence, m as motion } from "framer-motion";
 
 import { useAppDispatch } from "@/redux/hooks";
 import { toggleContactFormModal } from "@/redux/features/modals/modals";
-import Close from "@/images/icons/close";
-import HeartBroken from "@/images/icons/heartbroken";
+import Close from "@/app/components/icons/close";
+import HeartBroken from "@/app/components/icons/heartbroken";
 
 export default function ContactFormModal() {
   const dispatch = useAppDispatch();

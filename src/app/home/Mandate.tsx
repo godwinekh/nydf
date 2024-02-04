@@ -1,15 +1,15 @@
 "use client";
 import Image from "next/image";
-import groupStudy from "@/images/collaboration.jpg";
-import handyWoman from "@/images/hardworking-youth.jpg";
-import girlsPlayingBasketBall from "@/images/leisure.jpg";
-import VolleyBall from "@/images/icons/volleyBall";
-import Academic from "@/images/icons/academic";
-import Tools from "@/images/icons/tools";
+import groupStudy from "@@/assets/images/collaboration.jpg";
+import handyWoman from "@@/assets/images/hardworking-youth.jpg";
+import girlsPlayingBasketBall from "@@/assets/images/leisure.jpg";
+import VolleyBall from "@/app/components/icons/volleyBall";
+import Academic from "@/app/components/icons/academic";
+import Tools from "@/app/components/icons/tools";
 import Ellipsis from "../components/global/Ellipsis";
 import LearnMore from "../components/global/LearnMore";
 import { m as motion } from "framer-motion";
-import LightBulb from "@/images/icons/lightbulb";
+import LightBulb from "@/app/components/icons/lightbulb";
 
 export function Mandate() {
   const animations = {
@@ -191,7 +191,8 @@ export function Mandate() {
           </div>
           <h5 className="text-white">Community Building</h5>
           <p>
-            Harnessing the power of community service to cultivate strong character and leadership skills.
+            Harnessing the power of community service to cultivate strong
+            character and leadership skills.
           </p>
         </motion.div>
       </div>

@@ -1,12 +1,12 @@
 import Image from "next/image";
-import bandOfYouths from "@/images/together.jpg";
-import ExternalLink from "@/images/icons/externalLink";
+import Link from "next/link";
+import bandOfYouths from "@@/assets/images/together.jpg";
+import ExternalLink from "@/app/components/icons/externalLink";
 import {
   SemiCircleTopLeft,
   SemiCircleBottomRight,
 } from "../components/global/SemiCircle";
 import Ellipsis from "../components/global/Ellipsis";
-import Link from "next/link";
 import LearnMore from "../components/global/LearnMore";
 
 const communityOptions = [
@@ -26,7 +26,7 @@ const communityOptions = [
     group: "membership",
     urlToJoin: "https://forms.gle/j2ugBHc7N2m3ptBw5",
     brief:
-      "Don't just peak in through the windows, you can come under the roof too. Being a member goes beyond giving to the society. The community takes care of its own too.",
+      "Become a member of the Nixerlex Community and connect with fellow change agents today!",
   },
 ];
 

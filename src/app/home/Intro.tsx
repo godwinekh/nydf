@@ -1,6 +1,6 @@
 import Image from "next/image";
-import groupAfricans from "@/images/group-africans.jpg";
-import RadialBullet from "@/images/radial-bullet.svg";
+import groupAfricans from "@@/assets/images/group-africans.jpg";
+import RadialBullet from "@@/assets/images/radial-bullet.svg";
 import { SemiCircleBottomRight } from "../components/global/SemiCircle";
 
 export function Intro() {

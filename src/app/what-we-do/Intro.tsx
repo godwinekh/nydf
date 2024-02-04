@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import CheerfulYouths from "@/images/cheerful-youths.jpg";
+import CheerfulYouths from "@@/assets/images/cheerful-youths.jpg";
 import { SemiCircleBottomRight } from "../components/global/SemiCircle";
 
 import { m as motion } from "framer-motion";

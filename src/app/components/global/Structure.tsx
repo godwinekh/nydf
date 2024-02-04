@@ -28,30 +28,30 @@ export default function Structure({ children }: { children: React.ReactNode }) {
     dispatch(toggleShopAdModal(false));
   };
 
- useEffect(() => {
-   const storedExpirationTime = localStorage.getItem("modalExpirationTime");
-   const expirationTime = storedExpirationTime
-     ? parseInt(storedExpirationTime, 10)
-     : Date.now() + 1800000;
+  useEffect(() => {
+    const storedExpirationTime = localStorage.getItem("modalExpirationTime");
+    const expirationTime = storedExpirationTime
+      ? parseInt(storedExpirationTime, 10)
+      : Date.now() + 1800000;
 
-   if (!localStorage.getItem("hasModalBeenShown") && !isShop) {
-     dispatch(toggleShopAdModal(true));
-   }
+    if (!localStorage.getItem("hasModalBeenShown") && !isShop) {
+      dispatch(toggleShopAdModal(true));
+    }
 
-   const timeoutId = setTimeout(() => {
-     localStorage.removeItem("hasModalBeenShown");
-   }, expirationTime - Date.now());
+    const timeoutId = setTimeout(() => {
+      localStorage.removeItem("hasModalBeenShown");
+    }, expirationTime - Date.now());
 
-   localStorage.setItem("modalExpirationTime", expirationTime.toString());
+    localStorage.setItem("modalExpirationTime", expirationTime.toString());
 
-   return () => {
-     clearTimeout(timeoutId);
-     localStorage.removeItem("modalExpirationTime");
-   };
- }, [isShop, dispatch]);
+    return () => {
+      clearTimeout(timeoutId);
+      localStorage.removeItem("modalExpirationTime");
+    };
+  }, [isShop, dispatch]);
 
   const loadFeatures = () =>
-    import("../../features").then((res) => res.default);
+    import("../../framerFeatures").then((res) => res.default);
 
   return (
     <LazyMotion features={loadFeatures}>

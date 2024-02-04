@@ -5,8 +5,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 import { useAppSelector } from "@/redux/hooks";
-import NydfLogo from "@/images/nf-logo.png";
-import ShoppingCart from "@/images/icons/cart";
+import NydfLogo from "@@/assets/images/nf-logo.png";
+import ShoppingCart from "@/app/components/icons/cart";
 import Navigate from "./Navigation";
 
 export default function TopBar() {
@@ -27,9 +27,9 @@ export default function TopBar() {
 
   return (
     <div
-      className={`sticky top-0 flex flex-row sm:max-lg:justify-evenly items-center gap-7 ${
-        isShop ? "lg:gap-8" : "lg:gap-12"
-      } layout lg:py-1 bg-white lg:bg-white shadow-md z-50`}
+      className={`sticky top-0 flex flex-row sm:max-lg:justify-evenly items-center gap-7 layout ${
+        isShop ? "lg:gap-8 lg:px-14" : "lg:gap-12 px-4 md:px-12 lg:px-24"
+      } lg:py-1 bg-white lg:bg-white shadow-md z-50`}
     >
       <div className="lg:shrink-0 max-lg:grow flex items-center justify-center gap-2 p-1">
         <Link href="/">

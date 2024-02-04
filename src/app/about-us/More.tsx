@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { m as motion} from "framer-motion"
 
-import OfficeUnity from "@/images/people-office.jpg";
+import OfficeUnity from "@@/assets/images/people-office.jpg";
 
 const history = [
   {

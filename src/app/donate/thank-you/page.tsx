@@ -2,7 +2,7 @@
 import { m as motion } from "framer-motion";
 
 import Structure from "../../components/global/Structure";
-import ThumbsUp from "@/images/icons/thumbsUp";
+import ThumbsUp from "@/app/components/icons/thumbsUp";
 import { useSearchParams } from "next/navigation";
 
 export default function ThankYou() {
@@ -38,7 +38,11 @@ h-36 md:w-72 md:h-72 text-green-700"
             initial={{ y: 200, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1 }}
-            className={`text-3xl md:text-5xl mb-1 font-bold ${donationStatus === "successful" ? "text-green-700" : "text-amber-500"}`}
+            className={`text-3xl md:text-5xl mb-1 font-bold ${
+              donationStatus === "successful"
+                ? "text-green-700"
+                : "text-amber-500"
+            }`}
           >
             {donationStatus === "successful"
               ? "Thank You!"

@@ -3,13 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { LazyMotion } from "framer-motion";
 
-import NydfLogo from "@/images/nf-logo.png";
+import NydfLogo from "@@/assets/images/nf-logo.png";
 import DonateForm from "./DonateForm";
-import Socials from "../components/global/Socials";
-import Info from "@/images/icons/info";
+import Info from "@/app/components/icons/info";
 
 export default function Donate() {
-  const loadFeatures = () => import("../features").then((res) => res.default);
+  const loadFeatures = () =>
+    import("../framerFeatures").then((res) => res.default);
 
   return (
     <LazyMotion features={loadFeatures}>
@@ -34,8 +34,8 @@ export default function Donate() {
             </p>
           </div>
 
-          <div className="md:mt-20 md:mb-8 flex gap-2">
-            <Info className="w-10 h-10" />
+          <div className="mt-5 md:mt-20 md:mb-8 px-4 md:px-8 flex flex-col md:flex-row items-center md:items-start gap-2">
+            <Info className="w-8 h-8 md:w-10 md:h-10" />
             <p className="text-xs">
               We are currently unable to process international donations. If you
               are outside Nigeria and you wish to make a donations please{" "}

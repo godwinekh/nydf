@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Knuckles from "@/images/touching-knuckles.png";
+import Knuckles from "@@/assets/images/touching-knuckles.png";
 import { SemiCircleTopLeft } from "../components/global/SemiCircle";
 
 export default function Collaborate() {

@@ -1,6 +1,4 @@
-import Image from "next/image";
-import NYDFLogo from "@/images/nf-logo.png";
-import ShoppingBag from "@/images/icons/shoppingBag";
+import ShoppingBag from "@/app/components/icons/shoppingBag";
 
 export default function ComingSoon() {
   return (

@@ -1,8 +1,8 @@
 import Image from "next/image";
-import groupStudy from "@/images/study-group-african.jpg";
-import skilledYouth from "@/images/handyman-working.jpg";
-import femaleBallers from "@/images/female-basketball-players.jpg";
-import youngWomen from "@/images/young-women.jpg";
+import groupStudy from "@@/assets/images/study-group-african.jpg";
+import skilledYouth from "@@/assets/images/handyman-working.jpg";
+import femaleBallers from "@@/assets/images/female-basketball-players.jpg";
+import youngWomen from "@@/assets/images/young-women.jpg";
 
 export default function Programs() {
   return (

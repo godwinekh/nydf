@@ -3,10 +3,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { m as motion } from "framer-motion";
 
-import FacebookYellow from "@/images/nydf-fbIcon-yellow.svg";
-import FacebookBlue from "@/images/nydf-fbIcon-blue.svg";
-import InstagramYellow from "@/images/nydf-igIcon-yellow.svg";
-import InstagramBlue from "@/images/nydf-igIcon-blue.svg";
+import FacebookYellow from "@@/assets/images/nydf-fbIcon-yellow.svg";
+import FacebookBlue from "@@/assets/images/nydf-fbIcon-blue.svg";
+import InstagramYellow from "@@/assets/images/nydf-igIcon-yellow.svg";
+import InstagramBlue from "@@/assets/images/nydf-igIcon-blue.svg";
 
 const socials = [
   {
