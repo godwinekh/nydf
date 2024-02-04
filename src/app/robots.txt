@@ -1,0 +1,9 @@
+User-Agent: Googlebot
+Allow: /
+Disallow: /donate/
+
+User-Agent: *
+Allow: /
+Disallow: /donate/
+
+Sitemap: https://nixerlexfoundation.org/sitemap.xml

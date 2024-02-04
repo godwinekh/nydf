@@ -15,8 +15,6 @@ export const metadata: Metadata = {
   title: "Nixerlex Youth Development Foundation",
   description:
     "Empowering young people for a prosperous world through education and other social initiatives",
-  applicationName: "Nixerlex Foundation",
-  referrer: "origin-when-cross-origin",
   keywords: [
     "NYDF",
     "Nixerlex Youth Development Foundation",
@@ -29,19 +27,6 @@ export const metadata: Metadata = {
     "nixerlex foundation",
     "bright futures",
   ],
-  robots: {
-    index: false,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: false,
-      noimageindex: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
 };
 
 export default function RootLayout({
