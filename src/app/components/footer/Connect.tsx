@@ -38,8 +38,8 @@ export default function Connect() {
       )}
 
       {/* Text for /community */}
-      {pathname === "/get-involved" ||
-        (pathname === "/about-us" && (
+      {(pathname === "/get-involved" ||
+        pathname === "/about-us") && (
           <div>
             <p className="mb-5 leading-8">
               Have questions about getting involved? Feel free to contact us,
@@ -48,7 +48,7 @@ export default function Connect() {
               Nixerlex Youth Development Foundation!
             </p>
           </div>
-        ))}
+        )}
 
       {/* Text for /shop */}
       {pathname === "/shop" && (

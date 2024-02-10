@@ -21,7 +21,7 @@ const items: Role[] = [
     action: "Join as a volunteer",
     color: "orange-yellow",
     image: Volunteer,
-    link: "https://forms.gle/DZ2VG28ucpy9PZjUA",
+    link: "https://forms.gle/y1z25Ekus3TmqGBL7",
   },
   {
     category: "Member",
@@ -29,7 +29,7 @@ const items: Role[] = [
     action: "Become a member",
     color: "azure",
     image: Members,
-    link: "https://forms.gle/j2ugBHc7N2m3ptBw5",
+    link: "https://forms.gle/sKPjR49vxftcqE3f9",
   },
   {
     category: "Donor",
@@ -37,7 +37,7 @@ const items: Role[] = [
     action: "Join as a donor",
     color: "navy",
     image: Donate,
-    link: "https://forms.gle/SxPbGeMjxWRf25qQA",
+    link: "https://forms.gle/ShRKgBBVy6S4D8U88",
   },
 ];
 

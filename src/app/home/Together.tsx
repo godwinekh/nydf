@@ -12,19 +12,19 @@ import LearnMore from "../components/global/LearnMore";
 const communityOptions = [
   {
     group: "donate",
-    urlToJoin: "https://forms.gle/SxPbGeMjxWRf25qQA",
+    urlToJoin: "https://forms.gle/ShRKgBBVy6S4D8U88",
     brief:
       "Support our cause by making a donation. Your contribution directly impacts the lives of young individuals and help create lasting positive change.",
   },
   {
     group: "volunteer",
-    urlToJoin: "https://forms.gle/DZ2VG28ucpy9PZjUA",
+    urlToJoin: "https://forms.gle/y1z25Ekus3TmqGBL7",
     brief:
       "Become a part of our community by volunteering your time and expertise. Together, we can make a difference.",
   },
   {
     group: "membership",
-    urlToJoin: "https://forms.gle/j2ugBHc7N2m3ptBw5",
+    urlToJoin: "https://forms.gle/sKPjR49vxftcqE3f9",
     brief:
       "Become a member of the Nixerlex Community and connect with fellow change agents today!",
   },
