@@ -19,17 +19,17 @@ export default function ContactFormModal() {
         <motion.div
           initial={{ scale: 0.5, opacity: 0.5 }}
           animate={{ scale: 1, opacity: 1 }}
-          className="w-full md:w-2/5 rounded-md overflow-hidden bg-white shadow-2xl"
+          className="w-full md:w-3/5 xl:w-2/5 rounded-md overflow-hidden bg-white shadow-2xl"
         >
           <div className="px-10 py-6 my-0 flex items-center w-full text-center">
             <div className="grow flex gap-3 items-center">
-              <HeartBroken className="w-12 h-12 text-navy" />
-              <p className="my-0 mb-1 text-3xl font-bold capitalize">
+              <HeartBroken className="w-8 h-8 md:w-12 md:h-12 text-navy" />
+              <p className="my-0 mb-1 text-xl md:text-3xl font-bold capitalize">
                 Ooops! We are sorry
               </p>
             </div>
             <button onClick={closeModal}>
-              <Close className="w-8 h-8" />
+              <Close className="w-6 h-6 md:w-8 md:h-8" />
             </button>
           </div>
 
