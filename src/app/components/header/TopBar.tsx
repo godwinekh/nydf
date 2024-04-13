@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-import { useAppSelector } from "@/redux/hooks";
+import { useAppSelector } from "@/lib/hooks";
 import NydfLogo from "@@/assets/images/nf-logo.png";
 import ShoppingCart from "@/app/components/icons/cart";
 import Navigate from "./Navigation";
@@ -12,7 +12,7 @@ import Navigate from "./Navigation";
 export default function TopBar() {
   const [isAnimating, setIsAnimating] = useState(false);
   const pathname = usePathname();
-  const isShop = pathname === "/shop";
+  const isShop = pathname.startsWith("/shop");
   const cartItems = useAppSelector((state) => state.cart.totalItems);
 
   useEffect(() => {
@@ -52,14 +52,14 @@ export default function TopBar() {
 
       <Navigate />
 
-      <div className={`${isShop ? "block" : "hidden"} relative`}>
+      <Link href="/shop/cart" className={`${isShop ? "block" : "hidden"} relative`}>
         <ShoppingCart />
         {cartItems > 0 && (
           <p className="absolute -top-1.5 -right-1.5 w-5 h-5 flex justify-center items-center rounded-full bg-orange-yellow text-white text-sm">
             {cartItems}
           </p>
         )}
-      </div>
+      </Link>
 
       {/* Donate button */}
       <Link

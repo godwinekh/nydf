@@ -1,6 +1,6 @@
 "use client";
-import { toggleContactFormModal } from "@/redux/features/modals/modals";
-import { useAppDispatch } from "@/redux/hooks";
+import { toggleContactFormModal } from "@/lib/features/modals/modals";
+import { useAppDispatch } from "@/lib/hooks";
 // import SMTPTransport from "nodemailer/lib/smtp-transport";
 import React, { useState } from "react";
 

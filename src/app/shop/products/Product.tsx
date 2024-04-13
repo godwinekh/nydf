@@ -4,22 +4,16 @@ import Image, { StaticImageData } from "next/image";
 import Minus from "@/app/components/icons/minus";
 import Plus from "@/app/components/icons/plus";
 import Heart from "@/app/components/icons/heart";
-import { useAppDispatch } from "@/redux/hooks";
-import { addToCart } from "@/redux/features/cart/cart";
+import { useAppDispatch } from "@/lib/hooks";
+import { Product, addItem } from "@/lib/features/shop/cart";
 
-interface ProductProps {
+interface Props {
   name: string;
-  price: string;
+  price: number;
   image: StaticImageData;
 }
 
-interface ProductInfoState extends ProductProps {
-  quantity: number;
-  size: "s" | "m" | "l" | "xl" | "xxl" | undefined;
-  color: { code: string; primary: string; secondary: string } | null;
-}
-
-const sizes: ProductInfoState["size"][] = ["s", "m", "l", "xl", "xxl"];
+const sizes: Product["size"][] = ["s", "m", "l", "xl", "xxl"];
 
 const colors = [
   { code: "wh-az", primary: "white", secondary: "azure" },
@@ -31,10 +25,10 @@ const colors = [
   { code: "oy-wh", primary: "orange-yellow", secondary: "white" },
 ];
 
-export default function Product({ name, price, image }: ProductProps) {
+export default function Product({ name, price, image }: Props) {
   const dispatch = useAppDispatch();
   const [showWarning, setShowWarning] = useState<boolean>(false);
-  const [productInfo, setProductInfo] = useState<ProductInfoState>({
+  const [productInfo, setProductInfo] = useState<Product>({
     quantity: 1,
     size: undefined,
     color: null,
@@ -63,14 +57,14 @@ export default function Product({ name, price, image }: ProductProps) {
     }
   };
 
-  const handleSize = (selectedSize: ProductInfoState["size"]) => {
+  const handleSize = (selectedSize: Product["size"]) => {
     setProductInfo((prev) => ({
       ...prev,
       size: selectedSize,
     }));
   };
 
-  const handleColor = (selectedColor: ProductInfoState["color"]) => {
+  const handleColor = (selectedColor: Product["color"]) => {
     setProductInfo((prev) => ({
       ...prev,
       color: selectedColor,
@@ -79,7 +73,7 @@ export default function Product({ name, price, image }: ProductProps) {
 
   const handleAddToCart = () => {
     if (productInfo.size && productInfo.color) {
-      dispatch(addToCart());
+      dispatch(addItem(productInfo));
     } else {
       setShowWarning(true);
     }

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { AnimatePresence, m as motion } from "framer-motion";
 
-import { useAppDispatch } from "@/redux/hooks";
-import { toggleContactFormModal } from "@/redux/features/modals/modals";
+import { useAppDispatch } from "@/lib/hooks";
+import { toggleContactFormModal } from "@/lib/features/modals/modals";
 import Close from "@/app/components/icons/close";
 import HeartBroken from "@/app/components/icons/heartbroken";
 

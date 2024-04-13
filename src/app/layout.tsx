@@ -3,7 +3,7 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import ReduxProvider from "@/redux/provider";
+import ReduxProvider from "@/lib/provider";
 
 const poppins = Poppins({
   weight: ["400", "500", "700"],

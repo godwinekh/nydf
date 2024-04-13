@@ -1,7 +1,4 @@
-import {
-  combineReducers,
-  configureStore,
-} from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 import {
   persistReducer,
@@ -13,7 +10,8 @@ import {
   PURGE,
   REGISTER,
 } from "redux-persist";
-import cartReducer from "./features/cart/cart";
+import cartReducer from "./features/shop/cart";
+import orderReducer from "./features/shop/order";
 import modalReducer from "./features/modals/modals";
 
 const persistConfig = {
@@ -24,6 +22,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   cart: cartReducer,
+  order: orderReducer,
   modal: modalReducer,
 });
 

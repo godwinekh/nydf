@@ -7,8 +7,8 @@ import { LazyMotion } from "framer-motion";
 import TopBar from "../header/TopBar";
 import Connect from "../footer/Connect";
 import BottomBar from "../footer/BottomBar";
-import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { toggleShopAdModal } from "@/redux/features/modals/modals";
+import { useAppDispatch, useAppSelector } from "@/lib/hooks";
+import { toggleShopAdModal } from "@/lib/features/modals/modals";
 
 const ShopModal = dynamic(() => import("../modals/ShopModal"), { ssr: false });
 const ContactFormModal = dynamic(() => import("../modals/ContactFormModal"), {
@@ -58,12 +58,13 @@ export default function Structure({ children }: { children: React.ReactNode }) {
       <TopBar />
       <main className="flex flex-col min-h-screen items-center overflow-hidden relative">
         {children}
-        <Connect />
+        {!pathname.startsWith("/shop/") && <Connect />}
 
         {!isShop && showShopAd && <ShopModal closeModal={closeModal} />}
 
         {showContactForm && <ContactFormModal />}
       </main>
+
       <BottomBar />
     </LazyMotion>
   );
