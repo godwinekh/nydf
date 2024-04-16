@@ -9,9 +9,11 @@ interface Props {
 
 export default function Order({ back }: Props) {
   const cartTotal = useAppSelector((state) => state.cart.totalAmount);
-  const { delivery, total: orderTotal } = useAppSelector(
-    (state) => state.order
-  );
+  const {
+    delivery,
+    promo,
+    total: orderTotal,
+  } = useAppSelector((state) => state.order);
 
   useEffect(() => window.scrollTo(0, 0));
 
@@ -27,10 +29,18 @@ export default function Order({ back }: Props) {
             <p className="font-bold">Items:</p>
           </div>
 
-          <p className="font-bold">
-            Total: <span className="text-sm">&#x20A6;</span>
-            {cartTotal.toLocaleString()}
-          </p>
+          <div className="relative">
+            <p className="font-bold">
+              Total: <span className="text-sm">&#x20A6;</span>
+              {cartTotal.toLocaleString()}
+            </p>
+
+            {promo > 0 && (
+              <div className="absolute -bottom-5 right-0 z-10 bg-red-500 text-white rounded-md py-1 px-2 w-[7.6rem]">
+                <p className="text-sm">Discount: {promo.toLocaleString()}</p>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Delivery */}
@@ -50,7 +60,7 @@ export default function Order({ back }: Props) {
           <h4 className="">Order Total:</h4>
           <p>
             <span className="text-2xl">&#x20A6;</span>
-            {orderTotal.toLocaleString()}
+            {(orderTotal - promo).toLocaleString()}
           </p>
         </div>
 

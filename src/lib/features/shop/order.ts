@@ -13,7 +13,7 @@ interface CustomerData {
 
 interface OrderState {
   customer: CustomerData;
-  promo?: string;
+  promo: number;
   delivery: number;
   total: number;
 }
@@ -31,7 +31,7 @@ const initialValues = {
 
 const initialState: OrderState = {
   customer: initialValues,
-  promo: "",
+  promo: 0,
   delivery: 0,
   total: 0,
 };
@@ -40,7 +40,9 @@ const orderSlice = createSlice({
   name: "order",
   initialState,
   reducers: {
-    applyPromo() {},
+    applyPromo(state, action: PayloadAction<number>) {
+      state.promo = action.payload;
+    },
     setOrder(
       state,
       action: PayloadAction<{ customer: CustomerData; cartTotal: number }>

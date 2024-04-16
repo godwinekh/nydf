@@ -91,9 +91,13 @@ const cartSlice = createSlice({
       const figures = items.map(item => item.price * item.quantity)
 
       // calc the sum
-      const sum = figures.reduce((accumulator, productCost) => accumulator + productCost)
+      if (figures.length > 0) {
+        const sum = figures.reduce(
+          (accumulator, productCost) => accumulator + productCost
+        );
 
-      state.totalAmount = sum;
+        state.totalAmount = sum;
+      }
     }
   },
 });
