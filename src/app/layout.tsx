@@ -11,13 +11,6 @@ const poppins = Poppins({
   subsets: ["latin"],
 });
 
-export const gochi = Gochi_Hand({
-  weight: "400",
-  style: "normal",
-  preload: true,
-  subsets: ["latin"]
-})
-
 export const metadata: Metadata = {
   title: "Nixerlex Youth Development Foundation",
   description:

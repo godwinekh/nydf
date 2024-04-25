@@ -1,4 +1,4 @@
-import { gochi } from "@/app/layout";
+import { gochi } from "./page";
 
 export default function Letterhead() {
   return (
