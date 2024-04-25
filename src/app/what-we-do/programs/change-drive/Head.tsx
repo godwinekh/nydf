@@ -1,4 +1,11 @@
-import { gochi } from "./page";
+import { Gochi_Hand } from "next/font/google";
+
+const gochi = Gochi_Hand({
+  weight: "400",
+  style: "normal",
+  preload: true,
+  subsets: ["latin"],
+});
 
 export default function Letterhead() {
   return (
