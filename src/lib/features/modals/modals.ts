@@ -1,28 +1,33 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface ModalState {
-  showShopAd: boolean;
+  showWelcomeAd: boolean;
   showContactForm: boolean;
+  showMoreInfo: boolean;
 }
 
 const initialState: ModalState = {
-  showShopAd: false,
+  showWelcomeAd: false,
   showContactForm: false,
+  showMoreInfo: false,
 };
 
 const modalSlice = createSlice({
   name: "modals",
   initialState,
   reducers: {
-    toggleShopAdModal(state, action:PayloadAction<boolean>) {
-      state.showShopAd = action.payload;
+    toggleShopAdModal(state, action: PayloadAction<boolean>) {
+      state.showWelcomeAd = action.payload;
     },
     toggleContactFormModal(state) {
       state.showContactForm = !state.showContactForm;
     },
+    toggleMoreInfoModal(state) {
+      state.showMoreInfo = !state.showMoreInfo;
+    },
   },
 });
 
-export const { toggleShopAdModal, toggleContactFormModal, } = modalSlice.actions;
+export const { toggleShopAdModal, toggleContactFormModal, toggleMoreInfoModal} = modalSlice.actions;
 
 export default modalSlice.reducer;

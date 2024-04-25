@@ -9,7 +9,7 @@ const links = [
   { text: "what we do", ref: "/what-we-do" },
   { text: "get involved", ref: "/get-involved" },
   { text: "contact us", ref: "#contact" },
-  { text: "store", ref: "/shop" },
+  // { text: "store", ref: "/shop" },
 ];
 
 export default function Navigate() {

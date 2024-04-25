@@ -3,6 +3,7 @@ import groupStudy from "@@/assets/images/study-group-african.jpg";
 import skilledYouth from "@@/assets/images/handyman-working.jpg";
 import femaleBallers from "@@/assets/images/female-basketball-players.jpg";
 import youngWomen from "@@/assets/images/young-women.jpg";
+import Link from "next/link";
 
 export default function Programs() {
   return (
@@ -192,7 +193,7 @@ export default function Programs() {
         </div>
 
         <div className="lg:px-10">
-          <h3 className="text-4xl font-extrabold text-azure">Change Drive</h3>
+          <Link href="what-we-do/programs/change-drive" className="text-4xl font-extrabold text-azure">Change Drive</Link>
           <h4 className="capitalize font-bold text-3xl text-gray-900 my-3">
             Harnessing the power of community service
           </h4>

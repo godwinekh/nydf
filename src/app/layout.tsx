@@ -1,7 +1,7 @@
 import React from "react";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Gochi_Hand } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "@/lib/provider";
 
@@ -10,6 +10,13 @@ const poppins = Poppins({
   style: ["normal", "italic"],
   subsets: ["latin"],
 });
+
+export const gochi = Gochi_Hand({
+  weight: "400",
+  style: "normal",
+  preload: true,
+  subsets: ["latin"]
+})
 
 export const metadata: Metadata = {
   title: "Nixerlex Youth Development Foundation",
