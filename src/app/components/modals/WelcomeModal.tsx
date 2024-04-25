@@ -57,7 +57,7 @@ export default function WelcomeModal({ closeModal }: WelcomeModalProps) {
             alt="Change drive tree planting exercise may 2024"
             src={ChangeDrive}
             quality={100}
-            className="w-full h-72"
+            className="w-full h-72 md:h-64"
             style={{
               objectFit: "cover",
             }}
