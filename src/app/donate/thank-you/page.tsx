@@ -4,6 +4,7 @@ import { m as motion } from "framer-motion";
 import Structure from "../../components/global/Structure";
 import ThumbsUp from "@/app/components/icons/thumbsUp";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 export default function ThankYou() {
   const searchParams = useSearchParams();
@@ -25,11 +26,11 @@ export default function ThankYou() {
         >
           {donationStatus === "successful" ? (
             <ThumbsUp
-              className="w-36
-h-36 md:w-72 md:h-72 text-green-700"
+              className="w-28
+h-28 text-green-700"
             />
           ) : (
-            <p className="text-8xl md:text-9xl">&#128542;</p>
+            <p className="text-6xl">&#128542;</p>
           )}
         </motion.div>
 
@@ -59,6 +60,8 @@ h-36 md:w-72 md:h-72 text-green-700"
               : "We hope you try again!"}
           </motion.p>
         </div>
+
+        {donationStatus !== "successful" && <Link href='/donate' className="animate-link">Go back to Donate Page</Link>}
       </div>
     </Structure>
   );

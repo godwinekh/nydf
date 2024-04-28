@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import {  useRouter } from "next/navigation";
 import { AnimatePresence, m as motion } from "framer-motion";
-import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
-import { FlutterwaveConfig } from "flutterwave-react-v3/dist/types";
 import { useFormik } from "formik";
 import donateSchema from "./donateSchema";
 import CaretDown from "@/app/components/icons/caretDown";
 import Refresh from "../components/icons/refresh";
+import { usePaystackPayment } from "react-paystack";
 
 const calcAmountWithCharges = (amount: string) => {
   const amountInt = parseInt(amount);
@@ -25,7 +24,7 @@ const calcAmountWithCharges = (amount: string) => {
 };
 
 export default function DonateForm() {
-  const [paymentApiKey, setPaymentApiKey] = useState<string>("");
+  // const [paymentApiKey, setPaymentApiKey] = useState<string>("");
   const [showCurrencies, setShowCurrencies] = useState<boolean>(false);
   const [payCharges, setPayCharges] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
@@ -44,15 +43,7 @@ export default function DonateForm() {
       setLoading(true);
 
       try {
-        handleFlutterPayment({
-          callback: (response) => {
-            // console.log(response);
-            closePaymentModal();
-          },
-          onClose: () => {
-            setLoading(false);
-          },
-        });
+        intializePayment({onSuccess, onClose})
       } catch (error) {
         console.error("Payment error:", error);
         setLoading(false);
@@ -74,46 +65,54 @@ export default function DonateForm() {
     setPayCharges(isChecked);
   };
 
-  const fetchApiKey = async () => {
-    try {
-      const response = await fetch("/api/get-flutterwave");
+  // const fetchApiKey = async () => {
+  //   try {
+  //     const response = await fetch("/api/get-flutterwave");
 
-      if (!response.ok) {
-        throw new Error("Failed to fetch secret key");
-      }
+  //     if (!response.ok) {
+  //       throw new Error("Failed to fetch secret key");
+  //     }
 
-      const data = await response.json();
+  //     const data = await response.json();
 
-      setPaymentApiKey(data.secretKey);
-    } catch (error) {
-      console.error("Error fetching secret key:", error);
-    }
-  };
+  //     setPaymentApiKey(data.secretKey);
+  //   } catch (error) {
+  //     console.error("Error fetching secret key:", error);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchApiKey();
-  }, []);
+  // useEffect(() => {
+  //   fetchApiKey();
+  // }, []);
 
-  const config: FlutterwaveConfig = {
-    public_key: paymentApiKey,
-    tx_ref: Date.now().toLocaleString(),
-    amount: payCharges ? amountWithCharges : parseInt(formik.values.amount),
+  const config = {
+    email: `${formik.values.email}`,
+    amount: payCharges
+      ? amountWithCharges * 100
+      : parseInt(formik.values.amount) * 100,
     currency: `${formik.values.currency}`,
-    payment_options: "card,ussd,bank transfer",
-    customer: {
-      email: `${formik.values.email}`,
-      phone_number: `${formik.values.phone}`,
+    channels: ["card", "bank", "ussd", "qr", "mobile_money", "bank_transfer"],
+    custom_fields: {
       name: `${formik.values.name}`,
+      phone_number: `${formik.values.phone}`,
     },
-    customizations: {
-      title: "Nixerlex Youth Development Foundation",
-      description: "One-time Donation.",
-      logo: "https://nixerlexfoundation.org/icon.png",
-    },
-    redirect_url: "https://nixerlexfoundation.org/donate/thank-you",
+    publicKey: "pk_live_8812f9d099a564c3563fc32c4f64399084f2ff85",
   };
 
-  const handleFlutterPayment = useFlutterwave(config);
+  const onSuccess = (reference: any) => {
+    router.push(
+      "https://nixerlexfoundation.org/donate/thank-you?status=successful"
+    );
+    console.log(reference)
+  };
+
+  const onClose = () => {
+    router.push("https://nixerlexfoundation.org/donate/thank-you?status=failed");
+    setLoading(false);
+  };
+
+  const intializePayment = usePaystackPayment(config);
+
 
   return (
     <AnimatePresence>
@@ -236,7 +235,7 @@ export default function DonateForm() {
 
             {payCharges && amountWithCharges.toString() !== "NaN" && (
               <p className="text-azure">
-                You are now paying a total of NGN{" "}
+                You are now paying a total of {formik.values.currency + " "}
                 <span className="text-base">
                   {amountWithCharges.toLocaleString()}
                 </span>
@@ -253,6 +252,7 @@ export default function DonateForm() {
             >
               Go Back
             </button>
+
             <button
               type="submit"
               className={`flex justify-center items-center bg-navy p-3 text-white rounded-xl ${
