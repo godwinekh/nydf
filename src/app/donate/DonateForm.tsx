@@ -101,13 +101,13 @@ export default function DonateForm() {
 
   const onSuccess = (reference: any) => {
     router.push(
-      "https://nixerlexfoundation.org/donate/thank-you?status=successful"
+      "https://www.nixerlexfoundation.org/donate/thank-you?status=successful"
     );
     console.log(reference)
   };
 
   const onClose = () => {
-    router.push("https://nixerlexfoundation.org/donate/thank-you?status=failed");
+    router.push("https://www.nixerlexfoundation.org/donate/thank-you?status=failed");
     setLoading(false);
   };
 
