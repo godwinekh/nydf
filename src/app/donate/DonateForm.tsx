@@ -65,26 +65,6 @@ export default function DonateForm() {
     setPayCharges(isChecked);
   };
 
-  // const fetchApiKey = async () => {
-  //   try {
-  //     const response = await fetch("/api/get-flutterwave");
-
-  //     if (!response.ok) {
-  //       throw new Error("Failed to fetch secret key");
-  //     }
-
-  //     const data = await response.json();
-
-  //     setPaymentApiKey(data.secretKey);
-  //   } catch (error) {
-  //     console.error("Error fetching secret key:", error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchApiKey();
-  // }, []);
-
   const config = {
     email: `${formik.values.email}`,
     amount: payCharges

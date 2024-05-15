@@ -38,17 +38,16 @@ export default function Connect() {
       )}
 
       {/* Text for /community */}
-      {(pathname === "/get-involved" ||
-        pathname === "/about-us") && (
-          <div>
-            <p className="mb-5 leading-8">
-              Have questions about getting involved? Feel free to contact us,
-              and we will be happy to provide more information. Thank you for
-              considering joining in creating positive change through the
-              Nixerlex Youth Development Foundation!
-            </p>
-          </div>
-        )}
+      {(pathname === "/get-involved" || pathname === "/about-us") && (
+        <div>
+          <p className="mb-5 leading-8">
+            Have questions about getting involved? Feel free to contact us, and
+            we will be happy to provide more information. Thank you for
+            considering joining in creating positive change through the Nixerlex
+            Youth Development Foundation!
+          </p>
+        </div>
+      )}
 
       {/* Text for /shop */}
       {pathname === "/shop" && (
@@ -86,7 +85,7 @@ export default function Connect() {
 
         <div className="mt-16">
           <h6 className="font-bold">HQ Contact Address</h6>
-          <p>Ladipo Moses Street, Victory Estate, Ajah</p>
+          <p>8, The Providence Street, Lekki Phase 1</p>
           <p>Lagos, Nigeria.</p>
         </div>
       </div>
