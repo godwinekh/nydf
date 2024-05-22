@@ -59,7 +59,7 @@ export default function Structure({ children }: { children: React.ReactNode }) {
 
   return (
     <LazyMotion features={loadFeatures}>
-      <ProgramBanner />
+      {/* <ProgramBanner /> */}
       <TopBar />
       <main className="flex flex-col min-h-screen items-center overflow-hidden relative">
         {children}

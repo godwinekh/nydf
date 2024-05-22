@@ -55,15 +55,15 @@ export default function MoreInfoModal() {
               To raise awareness about the importance of tree planting for
               environmental sustainability and community well-being.
             </p>
-
             <div className="flex flex-col items-center justify-center gap-2 pt-4">
-              <Link
+              {/* <Link
                 href="https://forms.gle/CSCM8ZchpR8UZ7x4A"
                 target="_blank"
                 className="uppercase px-4 py-2 text-white bg-azure hover:bg-navy hover:shadow-md hover:scale-105 rounded-xl font-bold  md:text-xl"
               >
                 Volunteer
-              </Link>
+              </Link> */}
+              <p className="uppercase px-4 py-2 text-azure font-bold  md:text-xl">Thank you to our volunteers and partners! You rock</p>
 
               <p className="text-sm text-center">
                 More enquiries:{" "}
