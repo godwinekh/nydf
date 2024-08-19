@@ -1,12 +1,13 @@
 import Image from "next/image";
-import ChangeDrivePortrait from "@@/assets/images/projects/NYDF Change Drive portrait.png";
-import ChangeDrive from "@@/assets/images/projects/NYDF Change Drive.png";
+import ChangeDrivePortrait from "@@/assets/images/projects/NYDFMental HealthSurvey-min.png";
+import ChangeDrive from "@@/assets/images/projects/NYDFmental healthpopupbanner-min.png";
 import ChevronRight from "@/app/components/icons/chevronRight";
 import ShoppingBag from "@/app/components/icons/shoppingBag";
 import Close from "@/app/components/icons/close";
 import Link from "next/link";
 import { useEffect } from "react";
 import Calendar from "../icons/calendar";
+import TakeNote from "@/app/components/icons/takeNote";
 
 interface WelcomeModalProps {
   closeModal: () => void;
@@ -31,21 +32,23 @@ export default function WelcomeModal({ closeModal }: WelcomeModalProps) {
         className="w-full md:w-2/3 lg:w-3/5 rounded-md overflow-hidden bg-white shadow-2xl"
       >
         <div className="px-6 py-4 my-0 flex items-center w-full text-center">
-          <Calendar className="w-12 h-12 text-navy" />
+          <TakeNote className="w-12 h-12 text-navy hidden sm:block" />
           <div className="grow text-center">
-            <h5 className="my-0 mb-1">let&apos;s GO!!!</h5>
-            <p className="text-sm">May 4th Tree Planting Exercise is almost here</p>
+            <h5 className="my-0 mb-1">mental health survey</h5>
+            <p className="text-sm">
+              We are building a mental health program just for you!
+            </p>
           </div>
-          <button onClick={closeModal}>
+          <button onClick={closeModal} className="hidden sm:block">
             <Close className="w-8 h-8" />
           </button>
         </div>
         <div className="sm:hidden">
           <Image
-            alt="Change drive tree planting exercise may 2024"
+            alt="Mental Health Image"
             src={ChangeDrivePortrait}
             quality={100}
-            className="w-full h-72"
+            className="w-full"
             style={{
               objectFit: "cover",
             }}
@@ -54,37 +57,40 @@ export default function WelcomeModal({ closeModal }: WelcomeModalProps) {
 
         <div className="hidden sm:block">
           <Image
-            alt="Change drive tree planting exercise may 2024"
+            alt="Mental Health Image"
             src={ChangeDrive}
             quality={100}
-            className="w-full h-72 md:h-64"
+            className="w-full"
             style={{
               objectFit: "cover",
+              objectPosition: "top",
             }}
           />
         </div>
 
-        <div className="flex flex-col px-4 py-5 text-center">
+        {/* <div className="flex flex-col px-4 py-5 text-center">
           <p className="text-md mb-2">
-            NYDF Change Drive Tree Planting May 2024
+            NYDF and Your Mental Health
           </p>
           <p className="text-xs leading-relaxed">
-            Change DRIVE is an NYDF youth development program dedicated to
-            harnessing the power of community service to cultivate strong
-            character and help youths become proactive agents of change. Join us
-            this May to plant trees.
+            With the rising pressures and demands of our daily lives, it is ever more important to normalize a regular mental care. We are building a 24/7 available online check-in program where youths can easily get help to resolve stress in their lives. Let&apos;s deescalate before it even escalates! Please take the survey to help us build it right for you. The survey only takes less than 10 mins.
           </p>
-        </div>
+        </div> */}
 
-        <Link
-          href="https://forms.gle/CSCM8ZchpR8UZ7x4A"
-          target="_blank"
-          onClick={closeModal}
-          className="w-full flex justify-between px-4 py-3 text-xl font-light bg-gradient-to-r from-navy to-azure text-white"
-        >
-          <span className="grow text-center">Volunteer Now</span>
-          <ChevronRight />
-        </Link>
+        <div className="flex">
+          <button onClick={closeModal} className="w-2/5 sm:hidden">
+            Close
+          </button>
+          <Link
+            href="https://forms.gle/CSCM8ZchpR8UZ7x4A"
+            target="_blank"
+            onClick={closeModal}
+            className="w-3/5 sm:w-full flex justify-between px-4 py-3 text-xl font-light bg-gradient-to-r from-navy to-azure text-white"
+          >
+            <span className="grow text-center">Take the survey</span>
+            <ChevronRight />
+          </Link>
+        </div>
       </div>
     </div>
   );

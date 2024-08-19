@@ -9,8 +9,9 @@ import Connect from "../footer/Connect";
 import BottomBar from "../footer/BottomBar";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { toggleShopAdModal } from "@/lib/features/modals/modals";
-import ProgramBanner from "./ProgramBanner";
+// import ProgramBanner from "./ProgramBanner";
 import MoreInfoModal from "../modals/MoreInfoModal";
+import { ProgramBannerImage, ProgramBannerText } from "@/app/components/global/ProgramBanner";
 
 const WelcomeModal = dynamic(() => import("../modals/WelcomeModal"), { ssr: false });
 const ContactFormModal = dynamic(() => import("../modals/ContactFormModal"), {
@@ -59,7 +60,7 @@ export default function Structure({ children }: { children: React.ReactNode }) {
 
   return (
     <LazyMotion features={loadFeatures}>
-      {/* <ProgramBanner /> */}
+      <ProgramBannerText />
       <TopBar />
       <main className="flex flex-col min-h-screen items-center overflow-hidden relative">
         {children}

@@ -29,7 +29,7 @@ export default function Project({ image, title, description }: ProjectData) {
           >
             More Info
           </button>
-          <button className="text-gray-400 uppercase" disabled>
+          <button className="uppercase">
             Event Story
           </button>
         </div>
