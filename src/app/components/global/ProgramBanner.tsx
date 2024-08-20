@@ -5,8 +5,8 @@ import Link from "next/link";
 export function ProgramBannerText() {
   return (
     <div className="bg-gradient-to-r from-navy to-navy px-4 md:px-24 py-4">
-      <div className="flex justify-between md:justify-between items-end gap-4">
-        <div className="shrink-0 font-bold text-white text-right text-lg sm:text-xl leading-[1.1]">
+      <div className="flex flex-column justify-between md:justify-between items-end gap-4">
+        <div className="shrink-0 font-bold text-white text-right text-md sm:text-xl leading-[1.1]">
           <p>Introducing Mental Calm</p>
           {/* <Link href="/what-we-do/programs/change-drive">
           </Link> */}
@@ -40,9 +40,9 @@ export function ProgramBannerText() {
 
         <div>
           <Link
-            href="https://forms.gle/CSCM8ZchpR8UZ7x4A"
+            href="https://forms.gle/dpNEr2wEJS2C831u6"
             target="_blank"
-            className="uppercase px-4 md:px-8 py-1.5 text-white bg-gradient-to-r from-gray-900 via-azure to-gray-900 rounded-md font-bold text-sm shadow-lg"
+            className="uppercase px-4 md:px-8 py-1.5 text-white bg-gradient-to-r from-gray-900 via-azure to-gray-900 rounded-md font-bold text-xs sm:text-sm shadow-lg"
           >
             Take survey
           </Link>

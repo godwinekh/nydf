@@ -82,7 +82,7 @@ export default function WelcomeModal({ closeModal }: WelcomeModalProps) {
             Close
           </button>
           <Link
-            href="https://forms.gle/CSCM8ZchpR8UZ7x4A"
+            href="https://forms.gle/dpNEr2wEJS2C831u6"
             target="_blank"
             onClick={closeModal}
             className="w-3/5 sm:w-full flex justify-between px-4 py-3 text-xl font-light bg-gradient-to-r from-navy to-azure text-white"
