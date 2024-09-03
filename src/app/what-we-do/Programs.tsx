@@ -9,6 +9,52 @@ export default function Programs() {
   return (
     <div className="layout relative pb-24 pt-12">
       <h1 className="text-orange-yellow">Programs</h1>
+       {/* Change Drive */}
+      <div className="py-16">
+        <div
+          className="relative w-full h-96 -z-10 overflow-hidden mb-5 rounded-3xl"
+          style={{ height: "450px" }}
+        >
+          <Image
+            alt="young women experiencing change"
+            src={youngWomen}
+            quality={100}
+            placeholder="blur"
+            sizes="100vw"
+            fill
+            style={{
+              objectFit: "cover",
+            }}
+          />
+        </div>
+
+        <div className="lg:px-10">
+          <Link href="what-we-do/programs/change-drive" className="text-4xl font-extrabold text-azure hover:text-navy">Change Drive</Link>
+          <h4 className="capitalize font-bold text-3xl text-gray-900 my-3">
+            Harnessing the power of community service
+          </h4>
+
+          <p className="my-8">
+            Change Drive is an NYDF youth development program dedicated to
+            harnessing the power of community service to cultivate strong
+            character and leadership skills in young people while promoting
+            awareness for the United Nations Sustainable Development Goals
+            (SDGs).
+          </p>
+          <p>
+            Through hands-on service projects aligned with the SDGs and
+            meaningful engagement with their communities, participants not only
+            make a tangible difference in the lives of others but also develop
+            essential qualities such as empathy, responsibility, and resilience.
+            ChangeDrive empowers youth to become proactive agents of change,
+            instilling in them a sense of purpose and a commitment to making the
+            world a better place. Join us as we drive towards a brighter future,
+            one act of service at a time, all while contributing to the global
+            effort towards achieving the SDGs.
+          </p>
+        </div>
+      </div>
+
       {/* BRITE Futures Program */}
       <div className="py-16">
         <div
@@ -169,52 +215,6 @@ export default function Programs() {
           <p className="text-sm lg:text-lg">
             Stay updated on all our social media platforms to get updates obout
             the program schedules and information.
-          </p>
-        </div>
-      </div>
-
-      {/* Change Drive */}
-      <div className="py-16">
-        <div
-          className="relative w-full h-96 -z-10 overflow-hidden mb-5 rounded-3xl"
-          style={{ height: "450px" }}
-        >
-          <Image
-            alt="young women experiencing change"
-            src={youngWomen}
-            quality={100}
-            placeholder="blur"
-            sizes="100vw"
-            fill
-            style={{
-              objectFit: "cover",
-            }}
-          />
-        </div>
-
-        <div className="lg:px-10">
-          <Link href="what-we-do/programs/change-drive" className="text-4xl font-extrabold text-azure">Change Drive</Link>
-          <h4 className="capitalize font-bold text-3xl text-gray-900 my-3">
-            Harnessing the power of community service
-          </h4>
-
-          <p className="my-8">
-            Change Drive is an NYDF youth development program dedicated to
-            harnessing the power of community service to cultivate strong
-            character and leadership skills in young people while promoting
-            awareness for the United Nations Sustainable Development Goals
-            (SDGs).
-          </p>
-          <p>
-            Through hands-on service projects aligned with the SDGs and
-            meaningful engagement with their communities, participants not only
-            make a tangible difference in the lives of others but also develop
-            essential qualities such as empathy, responsibility, and resilience.
-            ChangeDrive empowers youth to become proactive agents of change,
-            instilling in them a sense of purpose and a commitment to making the
-            world a better place. Join us as we drive towards a brighter future,
-            one act of service at a time, all while contributing to the global
-            effort towards achieving the SDGs.
           </p>
         </div>
       </div>

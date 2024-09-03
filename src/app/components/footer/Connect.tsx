@@ -71,7 +71,9 @@ export default function Connect() {
               className="animate-link font-bold"
             >
               connect@nixerlexfoundation.org
-            </Link>
+
+            </Link>{" "}
+            or +2348029107444
           </p>
         </div>
       )}
@@ -87,6 +89,7 @@ export default function Connect() {
           <h6 className="font-bold">HQ Contact Address</h6>
           <p>8, The Providence Street, Lekki Phase 1</p>
           <p>Lagos, Nigeria.</p>
+          <p>+2348029107444</p>
         </div>
       </div>
     </div>

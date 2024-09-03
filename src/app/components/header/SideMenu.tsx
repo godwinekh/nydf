@@ -5,10 +5,12 @@ import HappyChildren from "@@/assets/images/nf-logo.png";
 import Hamburger from "@/app/components/icons/hamburger";
 import Close from "@/app/components/icons/close";
 import { usePathname } from "next/navigation";
+import CaretDown from "@/app/components/icons/caretDown";
 
 interface NavigationLink {
   text: string;
   ref: string;
+  sublinks?: NavigationLink[]
 }
 
 interface SlideMenuProps {
@@ -22,6 +24,7 @@ interface MenuState {
 export default function SideMenu({ links }: SlideMenuProps) {
   // Initialize state using the MenuState interface
   const [menuState, setMenuState] = useState<MenuState>({ open: false });
+    const [showDropDown, setShowDropDown] = useState<boolean>(false);
   const pathname = usePathname();
 
   return (
@@ -86,19 +89,54 @@ export default function SideMenu({ links }: SlideMenuProps) {
           <div className="grow flex flex-col py-10">
             <div className="text-3xl">
               <ul className="space-y-5">
-                {links.map((link, index) => (
-                  <li className="py-2" key={index}>
-                    <Link
-                      href={link.ref}
-                      className={`nav-link tracking-wider ${
-                        pathname === link.ref ? "text-orange-yellow" : ""
-                      }`}
-                      onClick={() => setMenuState({ open: false })}
+                {links.map((link, index) =>
+                  link.sublinks ? (
+                    <li
+                      className="py-2"
+                      key={link.text + index}
                     >
-                      {link.text}
-                    </Link>
-                  </li>
-                ))}
+                      <p
+                        onClick={() => {
+                          setShowDropDown(!showDropDown);
+                        }}
+                        className={`nav-link tracking-wider flex gap-1 ${
+                          pathname === link.ref ? "text-orange-yellow" : ""
+                        }`}
+                      >
+                        {link.text}
+                        <CaretDown
+                          className={`${showDropDown && "rotate-180"}`}
+                        />
+                      </p>
+
+                      {showDropDown && (
+                        <div className="flex flex-col items-left justify-center pt-2">
+                          {link.sublinks.map((sublink, index) => (
+                            <Link
+                              href={sublink.ref}
+                              key={sublink.text + index}
+                              className={`nav-link text-left text-[22px]`}
+                            >
+                              {sublink.text}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </li>
+                  ) : (
+                    <li className="py-2" key={index}>
+                      <Link
+                        href={link.ref}
+                        className={`nav-link tracking-wider ${
+                          pathname === link.ref ? "text-orange-yellow" : ""
+                        }`}
+                        onClick={() => setMenuState({ open: false })}
+                      >
+                        {link.text}
+                      </Link>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           </div>
