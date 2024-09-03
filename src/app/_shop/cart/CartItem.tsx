@@ -3,7 +3,7 @@ import Close from "@/app/components/icons/close";
 import Minus from "@/app/components/icons/minus";
 import Plus from "@/app/components/icons/plus";
 import {
-  Product,
+  TProduct,
   removeItem,
   sumTotal,
   updateQuantity,
@@ -18,7 +18,7 @@ export default function CartItem({
   quantity,
   color,
   size,
-}: Product) {
+}: TProduct) {
   const dispatch = useAppDispatch();
 
   const handleQuantity = (operation: "minus" | "add") => {

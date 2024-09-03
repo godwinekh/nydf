@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { StaticImageData } from "next/image";
 
-export interface Product {
+export interface TProduct {
   name: string;
   price: number;
   image: StaticImageData;
@@ -11,7 +11,7 @@ export interface Product {
 }
 
 interface CartState {
-  cartItems: Product[];
+  cartItems: TProduct[];
   totalAmount: number;
   totalItems: number;
 }
@@ -26,7 +26,7 @@ const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addItem(state, action: PayloadAction<Product>) {
+    addItem(state, action: PayloadAction<TProduct>) {
       const productItem = action.payload;
 
       // check if product already exists in cart items

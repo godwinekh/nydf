@@ -5,7 +5,7 @@ import Donate from "@@/assets/images/donate.jpg";
 import Role from "./Role";
 import { Url } from "next/dist/shared/lib/router/router";
 
-export interface Role {
+export interface TRole {
   category: string;
   text: string;
   action: string;
@@ -14,7 +14,7 @@ export interface Role {
   link: Url;
 };
 
-const items: Role[] = [
+const items: TRole[] = [
   {
     category: "Volunteer",
     text: "As a volunteer, you are important to us. We cannot do everything on our own. We need people of like minds who support our mission and who we can count on to help us make our vision a reality in the lives of young individuals.",

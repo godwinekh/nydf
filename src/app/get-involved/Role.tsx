@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { m as motion } from "framer-motion";
 
-import { Role } from "./Roles";
+import { TRole } from "./Roles";
 
 export default function Role({
   category,
@@ -12,7 +12,7 @@ export default function Role({
   action,
   color,
   link,
-}: Role) {
+}: TRole) {
   return (
     <div className="py-10">
       <h4 className={`mb-2 uppercase font-bold text-2xl text-${color}`}>

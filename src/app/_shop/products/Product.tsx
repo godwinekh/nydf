@@ -5,7 +5,7 @@ import Minus from "@/app/components/icons/minus";
 import Plus from "@/app/components/icons/plus";
 import Heart from "@/app/components/icons/heart";
 import { useAppDispatch } from "@/lib/hooks";
-import { Product, addItem } from "@/lib/features/shop/cart";
+import { TProduct, addItem } from "@/lib/features/shop/cart";
 
 interface Props {
   name: string;
@@ -13,7 +13,7 @@ interface Props {
   image: StaticImageData;
 }
 
-const sizes: Product["size"][] = ["s", "m", "l", "xl", "xxl"];
+const sizes: TProduct["size"][] = ["s", "m", "l", "xl", "xxl"];
 
 const colors = [
   { code: "wh-az", primary: "white", secondary: "azure" },
@@ -28,7 +28,7 @@ const colors = [
 export default function Product({ name, price, image }: Props) {
   const dispatch = useAppDispatch();
   const [showWarning, setShowWarning] = useState<boolean>(false);
-  const [productInfo, setProductInfo] = useState<Product>({
+  const [productInfo, setProductInfo] = useState<TProduct>({
     quantity: 1,
     size: undefined,
     color: null,
@@ -57,14 +57,14 @@ export default function Product({ name, price, image }: Props) {
     }
   };
 
-  const handleSize = (selectedSize: Product["size"]) => {
+  const handleSize = (selectedSize: TProduct["size"]) => {
     setProductInfo((prev) => ({
       ...prev,
       size: selectedSize,
     }));
   };
 
-  const handleColor = (selectedColor: Product["color"]) => {
+  const handleColor = (selectedColor: TProduct["color"]) => {
     setProductInfo((prev) => ({
       ...prev,
       color: selectedColor,
