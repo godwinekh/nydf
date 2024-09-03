@@ -1,27 +1,29 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
-import Image from "next/image";
+// import * as React from "react";
+// import Box from "@mui/material/Box";
+// import ImageList from "@mui/material/ImageList";
+// import ImageListItem from "@mui/material/ImageListItem";
+// import Image from "next/image";
 
 export default function MasonryImageList() {
   return (
-    <Box sx={{ width: 500, height: 450, overflowY: "scroll" }}>
-      <ImageList variant="masonry" cols={3} gap={8}>
-        {generated_links.map((item) => (
-          <ImageListItem key={item.src}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <Image
-              src={item.src}
-              alt={item.alt}
-              loading="lazy"
-              sizes='100vw'
-              style={{ width: "auto", height: "auto" }}
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
-    </Box>
+    <div></div>
+    // <Box sx={{ width: 500, height: 450, overflowY: "scroll" }}>
+    //   <ImageList variant="masonry" cols={3} gap={8}>
+    //     {generated_links.map((item) => (
+    //       <ImageListItem key={item.src}>
+    //         {/* eslint-disable-next-line @next/next/no-img-element */}
+    //         <Image
+    //           src={item.src}
+    //           alt={item.alt}
+    //           loading="lazy"
+    //           sizes='100vw'
+    //           style={{ width: "auto", height: "auto" }}
+    //         />
+    //       </ImageListItem>
+    //     ))}
+    //   </ImageList>
+    // </Box>
+
   );
 }
 
