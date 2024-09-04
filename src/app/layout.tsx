@@ -1,9 +1,9 @@
 import React from "react";
-import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { Poppins, Gochi_Hand } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "@/lib/provider";
+import Script from "next/script"; // Import Script from next/script
 
 const poppins = Poppins({
   weight: ["400", "500", "700"],
@@ -36,10 +36,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-T63JBKMM45"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-T63JBKMM45');
+          `}
+        </Script>
+      </head>
       <body className={poppins.className}>
         <ReduxProvider>
           {children}
-          <Analytics />
         </ReduxProvider>
       </body>
     </html>
