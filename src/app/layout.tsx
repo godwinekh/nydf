@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "@/lib/provider";
-import Script from "next/script"; // Import Script from next/script
+import Script from "next/script"; 
 
 const poppins = Poppins({
   weight: ["400", "500", "700"],

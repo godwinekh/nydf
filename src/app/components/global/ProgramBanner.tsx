@@ -1,35 +1,55 @@
-import Banner from "@@/assets/images/NYDF Website Banner-min.png";
+import BannerBg from "@@/assets/images/top-banner-bg.png";
+import GoogleMeet from "@@/assets/images/google-meet.png";
 import Image from "next/image";
 import Link from "next/link";
 
-export function ProgramBannerText() {
+export default function ProgramBanner() {
   return (
-    <div className="bg-gradient-to-r from-navy to-navy px-4 md:px-24 py-4">
-      <div className="flex flex-column justify-between md:justify-between items-end gap-4">
-        <div className="shrink-0 font-bold text-white text-right text-md sm:text-xl leading-[1.1]">
-          <p>Introducing Mental Calm</p>
-          {/* <Link href="/what-we-do/programs/change-drive">
-          </Link> */}
+    // <div className="bg-gradient-to-r from-navy to-navy px-4 md:px-24 py-4">
+    <div className="relative px-4 md:px-24 py-2">
+      <div className="absolute top-0 left-0 bottom-0 right-0 -z-10">
+        <Image
+          src={BannerBg}
+          alt="background-image"
+          fill
+          style={{ objectFit: "cover" }}
+        />
+      </div>
+
+      <div className="flex flex-column justify-between md:justify-between items-center gap-4 z-30">
+        <div className="shrink-0 flex flex-col md:flex-row items-center gap-1 font-bold text-white text-md sm:text-xl leading-[1.1]">
+          <span className="text-xs bg-orange-yellow text-gray-900 rounded px-2 py-[0.5]">
+            Prioritizing your
+          </span>
+          <span>Mental Health</span>
         </div>
 
-        <div className="space-y-1">
-          <p className="hidden lg:block text-white lg:text-xs xl:text-md leading-[1.1]">
-            Tell us about your mental health to help us build a program just for
-            you!
-          </p>
-          {/* <p className="text-xs text-center hidden sm:block md:hidden">
-            Join us on <span className="font-bold text-white">May 4, 2024</span>
-          </p> */}
+        <div className="flex items-center gap-8">
+          <div className="space-y-1 ">
+            <p className="hidden lg:block lg:text-xs xl:text-md leading-[1.1] text-gray-200">
+              Have a calm meeting with a community that cares at the NYDF
+            </p>
+            <div className="flex flex-col md:flex-row justify-between font-bold">
+              <p className="text-gray-200 hidden sm:block text-md text-center leading-[1.1]">
+                EMPOWER MINDS
+              </p>
+              <p className="text-white text-md text-center leading-[1.1]">
+                October 10th, 3PM{" "}
+                <span className="font-normal text-xs">(WAT)</span>
+              </p>
+            </div>
+          </div>
+
+          <div className="relative hidden md:block">
+            <Image
+              src={GoogleMeet}
+              alt="An uprooted plant"
+              quality={100}
+              className="w-24 h-auto"
+            />
+          </div>
         </div>
 
-        {/* <div className="">
-          <Image
-            src={Plant}
-            alt="An uprooted plant"
-            quality={100}
-            className="w-20 h-16 md:w-20 md:h-20"
-          />
-        </div> */}
         {/*
         <div className="hidden md:block">
           <p>
@@ -40,39 +60,9 @@ export function ProgramBannerText() {
 
         <div>
           <Link
-            href="https://forms.gle/dpNEr2wEJS2C831u6"
+            href="https://bit.ly/NYDFMHday"
             target="_blank"
-            className="uppercase px-4 md:px-8 py-1.5 text-white bg-gradient-to-r from-gray-900 via-azure to-gray-900 rounded-md font-bold text-xs sm:text-sm shadow-lg"
-          >
-            Take survey
-          </Link>
-        </div>
-      </div>
-      <p className="block lg:hidden text-white md:text-left text-xs leading-[1.1] pt-2">
-        The survey only takes less than 10 minutes!
-      </p>
-    </div>
-  );
-}
-
-export function ProgramBannerImage() {
-  return (
-    <div className="relative">
-      <div className="w-full">
-        <Image
-          src={Banner}
-          alt="An uprooted plant"
-          quality={100}
-          className="w-full h-20"
-        />
-      </div>
-
-      <div className="absolute top-0 right-0 z-20 flex justify-center items-center h-full w-[30%]">
-        <div>
-          <Link
-            href="https://forms.gle/CSCM8ZchpR8UZ7x4A"
-            target="_blank"
-            className="uppercase px-4 py-2 text-navy bg-gradient-to-r from-white to-orange-yellow-light rounded-xl font-bold  md:text-xl"
+            className="uppercase px-4 md:px-8 py-1.5 text-navy bg-white rounded-md font-bold text-xs sm:text-sm shadow-lg"
           >
             Register
           </Link>

@@ -1,13 +1,13 @@
 import Image from "next/image";
-import ChangeDrivePortrait from "@@/assets/images/projects/NYDFMental HealthSurvey-min.png";
-import ChangeDrive from "@@/assets/images/projects/NYDFmental healthpopupbanner-min.png";
+import MentalHealthPopupPortrait from "@@/assets/images/mental-health-popup-mobile.png";
+import MentalHealthPopup from "@@/assets/images/mental-health-popup.png";
 import ChevronRight from "@/app/components/icons/chevronRight";
-import ShoppingBag from "@/app/components/icons/shoppingBag";
+// import ShoppingBag from "@/app/components/icons/shoppingBag";
 import Close from "@/app/components/icons/close";
 import Link from "next/link";
 import { useEffect } from "react";
 import Calendar from "../icons/calendar";
-import TakeNote from "@/app/components/icons/takeNote";
+// import TakeNote from "@/app/components/icons/takeNote";
 
 interface WelcomeModalProps {
   closeModal: () => void;
@@ -32,11 +32,11 @@ export default function WelcomeModal({ closeModal }: WelcomeModalProps) {
         className="w-full md:w-2/3 lg:w-3/5 rounded-md overflow-hidden bg-white shadow-2xl"
       >
         <div className="px-6 py-4 my-0 flex items-center w-full text-center">
-          <TakeNote className="w-12 h-12 text-navy hidden sm:block" />
+          <Calendar className="w-12 h-12 text-navy hidden sm:block" />
           <div className="grow text-center">
-            <h5 className="my-0 mb-1">mental health survey</h5>
+            <h5 className="my-0 mb-1">save the date</h5>
             <p className="text-sm">
-              We are building a mental health program just for you!
+              To prioritize your mental health
             </p>
           </div>
           <button onClick={closeModal} className="hidden sm:block">
@@ -46,7 +46,7 @@ export default function WelcomeModal({ closeModal }: WelcomeModalProps) {
         <div className="sm:hidden">
           <Image
             alt="Mental Health Image"
-            src={ChangeDrivePortrait}
+            src={MentalHealthPopupPortrait}
             quality={100}
             className="w-full"
             style={{
@@ -58,7 +58,7 @@ export default function WelcomeModal({ closeModal }: WelcomeModalProps) {
         <div className="hidden sm:block">
           <Image
             alt="Mental Health Image"
-            src={ChangeDrive}
+            src={MentalHealthPopup}
             quality={100}
             className="w-full"
             style={{
@@ -82,12 +82,12 @@ export default function WelcomeModal({ closeModal }: WelcomeModalProps) {
             Close
           </button>
           <Link
-            href="https://forms.gle/dpNEr2wEJS2C831u6"
+            href="https://bit.ly/NYDFMHday"
             target="_blank"
             onClick={closeModal}
             className="w-3/5 sm:w-full flex justify-between px-4 py-3 text-xl font-light bg-gradient-to-r from-navy to-azure text-white"
           >
-            <span className="grow text-center">Take the survey</span>
+            <span className="grow text-center">Register for the event</span>
             <ChevronRight />
           </Link>
         </div>
