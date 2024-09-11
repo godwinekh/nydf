@@ -85,7 +85,7 @@ export default function WelcomeModal({ closeModal }: WelcomeModalProps) {
             href="https://bit.ly/NYDFMHday"
             target="_blank"
             onClick={closeModal}
-            className="w-3/5 sm:w-full flex justify-between px-4 py-3 text-xl font-light bg-gradient-to-r from-navy to-azure text-white"
+            className="w-3/5 sm:w-full flex justify-between px-4 py-3 text-sm md:text-xl font-light bg-gradient-to-r from-navy to-azure text-white"
           >
             <span className="grow text-center">Register for the event</span>
             <ChevronRight />
