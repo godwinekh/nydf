@@ -68,15 +68,6 @@ export default function WelcomeModal({ closeModal }: WelcomeModalProps) {
           />
         </div>
 
-        {/* <div className="flex flex-col px-4 py-5 text-center">
-          <p className="text-md mb-2">
-            NYDF and Your Mental Health
-          </p>
-          <p className="text-xs leading-relaxed">
-            With the rising pressures and demands of our daily lives, it is ever more important to normalize a regular mental care. We are building a 24/7 available online check-in program where youths can easily get help to resolve stress in their lives. Let&apos;s deescalate before it even escalates! Please take the survey to help us build it right for you. The survey only takes less than 10 mins.
-          </p>
-        </div> */}
-
         <div className="flex">
           <button onClick={closeModal} className="w-2/5 sm:hidden">
             Close
@@ -84,7 +75,10 @@ export default function WelcomeModal({ closeModal }: WelcomeModalProps) {
           <Link
             href="https://bit.ly/NYDFMHday"
             target="_blank"
-            onClick={closeModal}
+            onClick={() => {
+              `gtag_report_conversion()`;
+              closeModal()
+            }}
             className="w-3/5 sm:w-full flex justify-between px-4 py-3 text-sm md:text-xl font-light bg-gradient-to-r from-navy to-azure text-white"
           >
             <span className="grow text-center">Register for the event</span>

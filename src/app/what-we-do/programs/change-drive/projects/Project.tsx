@@ -2,6 +2,7 @@
 import { toggleMoreInfoModal } from "@/lib/features/modals/modals";
 import { useAppDispatch } from "@/lib/hooks";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 
 interface ProjectData {
   image: StaticImageData;
@@ -29,9 +30,13 @@ export default function Project({ image, title, description }: ProjectData) {
           >
             More Info
           </button>
-          <button className="uppercase">
+          <Link
+            href="https://youtu.be/9iXMSUcl_kU?si=14arFJfWlMV2npDz"
+            target="_blank"
+            className="uppercase"
+          >
             Event Story
-          </button>
+          </Link>
         </div>
       </div>
     </div>

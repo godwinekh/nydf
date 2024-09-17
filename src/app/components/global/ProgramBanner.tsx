@@ -50,18 +50,13 @@ export default function ProgramBanner() {
           </div>
         </div>
 
-        {/*
-        <div className="hidden md:block">
-          <p>
-            Join us on <span className="font-bold text-white">May 4, 2024</span>
-          </p>
-          <p className="text-xs">to plant trees in selected areas in Lagos</p>
-        </div> */}
-
         <div>
           <Link
             href="https://bit.ly/NYDFMHday"
             target="_blank"
+            onClick={() => {
+               `gtag_report_conversion()`;
+            }}
             className="uppercase px-4 md:px-8 py-1.5 text-navy bg-white rounded-md font-bold text-xs sm:text-sm shadow-lg"
           >
             Register

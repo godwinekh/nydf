@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import ReduxProvider from "@/lib/provider";
-import Script from "next/script"; 
+import Script from "next/script";
 
 const poppins = Poppins({
   weight: ["400", "500", "700"],
@@ -50,11 +50,29 @@ export default function RootLayout({
             gtag('config', 'G-T63JBKMM45');
           `}
         </Script>
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            // Helper function to delay opening a URL until a gtag event is sent.
+            // Call it in response to an action that should navigate to a URL.
+            function gtagSendEvent(url) {
+              var callback = function () {
+                if (typeof url === "string") {
+                  window.location = url;
+                }
+              };
+              gtag("event", "conversion_event_signup", {
+                event_callback: callback,
+                event_timeout: 2000,
+                // <event_parameters>
+              });
+              return false;
+            }
+          `}
+        </Script>
       </head>
       <body className={poppins.className}>
-        <ReduxProvider>
-          {children}
-        </ReduxProvider>
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );
